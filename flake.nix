@@ -26,6 +26,8 @@
 
         deemix = callPythonPackage ./deemix { };
 
+        textidote = callPackage ./textidote { };
+
         VisiCut = callPackage ./VisiCut { };
       };
   } // flake-utils.lib.eachDefaultSystem (system:
@@ -52,6 +54,7 @@
         {
           inherit (pkgs)
             deemix
+            textidote
             VisiCut;
         };
 
