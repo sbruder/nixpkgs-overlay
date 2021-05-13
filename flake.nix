@@ -16,6 +16,16 @@
         callPythonPackage = prev.python3Packages.callPackage;
       in
       {
+        python3 = prev.python3.override {
+          packageOverrides = final: prev:
+            {
+              deezer-py = callPythonPackage ./python-modules/deezer-py { };
+            };
+        };
+        python3Packages = prev.recurseIntoAttrs final.python3.pkgs;
+
+        deemix = callPythonPackage ./deemix { };
+
         VisiCut = callPackage ./VisiCut { };
       };
   } // flake-utils.lib.eachDefaultSystem (system:
@@ -41,6 +51,7 @@
         (n: v: lib.elem system v.meta.platforms)
         {
           inherit (pkgs)
+            deemix
             VisiCut;
         };
 
