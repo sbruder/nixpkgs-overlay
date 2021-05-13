@@ -16,6 +16,7 @@
         callPythonPackage = prev.python3Packages.callPackage;
       in
       {
+        VisiCut = callPackage ./VisiCut { };
       };
   } // flake-utils.lib.eachDefaultSystem (system:
     let
@@ -39,7 +40,8 @@
       packages = lib.filterAttrs
         (n: v: lib.elem system v.meta.platforms)
         {
-          inherit (pkgs);
+          inherit (pkgs)
+            VisiCut;
         };
 
       # My hydra only has x86_64-linux builders
