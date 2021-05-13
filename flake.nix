@@ -24,6 +24,8 @@
         };
         python3Packages = prev.recurseIntoAttrs final.python3.pkgs;
 
+        cyanrip = callPackage ./cyanrip { };
+
         deemix = callPythonPackage ./deemix { };
 
         textidote = callPackage ./textidote { };
@@ -53,6 +55,7 @@
         (n: v: lib.elem system v.meta.platforms)
         {
           inherit (pkgs)
+            cyanrip
             deemix
             textidote
             VisiCut;
