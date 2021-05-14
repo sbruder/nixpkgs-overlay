@@ -30,6 +30,8 @@
 
         textidote = callPackage ./textidote { };
 
+        unxwb = callPackage ./unxwb { };
+
         VisiCut = callPackage ./VisiCut { };
       };
   } // flake-utils.lib.eachDefaultSystem (system:
@@ -58,6 +60,7 @@
             cyanrip
             deemix
             textidote
+            unxwb
             VisiCut;
         };
 
