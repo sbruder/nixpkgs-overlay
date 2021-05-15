@@ -28,6 +28,10 @@
 
         deemix = callPythonPackage ./deemix { };
 
+        mpvScripts = prev.mpvScripts // {
+          pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
+        };
+
         textidote = callPackage ./textidote { };
 
         unxwb = callPackage ./unxwb { };
@@ -55,14 +59,19 @@
 
       packages = lib.filterAttrs
         (n: v: lib.elem system v.meta.platforms)
-        {
+        (flake-utils.lib.flattenTree {
           inherit (pkgs)
             cyanrip
             deemix
             textidote
             unxwb
             VisiCut;
-        };
+
+          mpvScripts = lib.recurseIntoAttrs {
+            inherit (pkgs.mpvScripts)
+              pitchcontrol;
+          };
+        });
 
       # My hydra only has x86_64-linux builders
       hydraJobs =
