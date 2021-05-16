@@ -37,6 +37,8 @@
         unxwb = callPackage ./unxwb { };
 
         VisiCut = callPackage ./VisiCut { };
+
+        x264-unstable = prev.x264.overrideAttrs (callPackage ./x264-unstable { });
       };
   } // flake-utils.lib.eachDefaultSystem (system:
     let
@@ -61,11 +63,12 @@
         (n: v: lib.elem system v.meta.platforms)
         (flake-utils.lib.flattenTree {
           inherit (pkgs)
+            VisiCut
             cyanrip
             deemix
             textidote
             unxwb
-            VisiCut;
+            x264-unstable;
 
           mpvScripts = lib.recurseIntoAttrs {
             inherit (pkgs.mpvScripts)
