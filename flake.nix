@@ -32,6 +32,8 @@
           pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
         };
 
+        oha = callPackage ./oha { };
+
         textidote = callPackage ./textidote { };
 
         unxwb = callPackage ./unxwb { };
@@ -66,6 +68,7 @@
             VisiCut
             cyanrip
             deemix
+            oha
             textidote
             unxwb
             x264-unstable;
