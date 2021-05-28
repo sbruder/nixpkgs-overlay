@@ -38,6 +38,8 @@
 
         unxwb = callPackage ./unxwb { };
 
+        vgmstream = callPackage ./vgmstream { };
+
         VisiCut = callPackage ./VisiCut { };
 
         x264-unstable = prev.x264.overrideAttrs (callPackage ./x264-unstable { });
@@ -71,6 +73,7 @@
             oha
             textidote
             unxwb
+            vgmstream
             x264-unstable;
 
           mpvScripts = lib.recurseIntoAttrs {
