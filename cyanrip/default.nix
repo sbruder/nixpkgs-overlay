@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
     owner = "cyanreg";
     repo = pname;
     rev = "v${version}";
-    sha256 = "0lgb92sfpf4w3nj5vlj6j7931mj2q3cmcx1app9snf853jk9ahmw";
+    sha256 = "0000000000000000000000000000000000000000000000000000";
   };
 
   nativeBuildInputs = [ meson ninja pkg-config ];
