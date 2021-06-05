@@ -34,6 +34,8 @@
 
         oha = callPackage ./oha { };
 
+        snownews = callPackage ./snownews { };
+
         textidote = callPackage ./textidote { };
 
         unxwb = callPackage ./unxwb { };
@@ -71,6 +73,7 @@
             cyanrip
             deemix
             oha
+            snownews
             textidote
             unxwb
             vgmstream
