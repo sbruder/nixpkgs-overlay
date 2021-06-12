@@ -28,6 +28,8 @@
 
         deemix = callPythonPackage ./deemix { };
 
+        face_morpher = callPythonPackage ./face_morpher { };
+
         mpvScripts = prev.mpvScripts // {
           pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
         };
@@ -72,6 +74,7 @@
             VisiCut
             cyanrip
             deemix
+            face_morpher
             oha
             snownews
             textidote
