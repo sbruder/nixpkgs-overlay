@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchzip, makeWrapper, jdk11, gsettings-desktop-schemas, gtk3 }:
+{ lib, stdenv, fetchzip, makeWrapper, wrapGAppsHook, glib, jdk11 }:
 
 stdenv.mkDerivation rec {
   pname = "VisiCut";
@@ -9,19 +9,29 @@ stdenv.mkDerivation rec {
     sha256 = "12xkysh66vcv17dffn9ybqk85lzxy4rqswxv4jwr0b1fwajfvd96";
   };
 
-  nativeBuildInputs = [ makeWrapper ];
-  buildInputs = [ jdk11 ];
+  nativeBuildInputs = [ makeWrapper wrapGAppsHook ];
+  buildInputs = [ glib jdk11 ];
 
-  # FIXME: Use proper way of wrapping a gnome application
+  dontWrapGApps = true;
+
   installPhase = ''
+    runHook preInstall
+
     rm ${pname}.{exe,Linux,MacOS}
     mkdir -p $out/share
     cp -r . $out/share/${pname}
+
+    runHook postInstall
+  '';
+
+  # Needs to be run in fixupPhase, since gappsWrapperArgs are not fully
+  # populated in installPhase yet.
+  postFixup = ''
     makeWrapper \
         ${jdk11}/bin/java \
         $out/bin/${pname} \
         --add-flags "-Xms256m -Xmx2048m -jar $out/share/${pname}/Visicut.jar" \
-        --set "XDG_DATA_DIRS" "${gsettings-desktop-schemas}/share/gsettings-schemas/${gsettings-desktop-schemas.name}:${gtk3}/share/gsettings-schemas/${gtk3.name}:$XDG_DATA_DIRS"
+        "''${gappsWrapperArgs[@]}"
   '';
 
   meta = with lib; {
