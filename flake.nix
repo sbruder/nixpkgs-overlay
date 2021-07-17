@@ -32,6 +32,8 @@
 
         deemix = callPythonPackage ./deemix { };
 
+        fSpy = callPackage ./fSpy { };
+
         face_morpher = callPythonPackage ./face_morpher { };
 
         mpvScripts = prev.mpvScripts // {
@@ -80,6 +82,7 @@
             VisiCut
             cyanrip
             deemix
+            fSpy
             face_morpher
             nsz
             oha
