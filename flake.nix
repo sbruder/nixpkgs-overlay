@@ -20,6 +20,8 @@
           packageOverrides = final: prev:
             {
               deezer-py = callPythonPackage ./python-modules/deezer-py { };
+
+              prefixed = callPythonPackage ./python-modules/prefixed { };
             };
         };
         python3Packages = prev.recurseIntoAttrs final.python3.pkgs;
