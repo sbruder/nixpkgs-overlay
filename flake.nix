@@ -21,6 +21,8 @@
             {
               deezer-py = callPythonPackage ./python-modules/deezer-py { };
 
+              enlighten = callPythonPackage ./python-modules/enlighten { };
+
               prefixed = callPythonPackage ./python-modules/prefixed { };
             };
         };
