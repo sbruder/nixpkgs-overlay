@@ -38,6 +38,8 @@
           pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
         };
 
+        nsz = callPythonPackage ./nsz { };
+
         oha = callPackage ./oha { };
 
         snownews = callPackage ./snownews { };
@@ -79,6 +81,7 @@
             cyanrip
             deemix
             face_morpher
+            nsz
             oha
             snownews
             textidote
