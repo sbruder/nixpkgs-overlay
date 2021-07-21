@@ -20,6 +20,10 @@
           packageOverrides = final: prev:
             {
               deezer-py = callPythonPackage ./python-modules/deezer-py { };
+
+              enlighten = callPythonPackage ./python-modules/enlighten { };
+
+              prefixed = callPythonPackage ./python-modules/prefixed { };
             };
         };
         python3Packages = prev.recurseIntoAttrs final.python3.pkgs;
@@ -33,6 +37,8 @@
         mpvScripts = prev.mpvScripts // {
           pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
         };
+
+        nsz = callPythonPackage ./nsz { };
 
         oha = callPackage ./oha { };
 
@@ -75,6 +81,7 @@
             cyanrip
             deemix
             face_morpher
+            nsz
             oha
             snownews
             textidote
