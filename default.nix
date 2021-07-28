@@ -33,6 +33,8 @@ in
 
   oha = callPackage ./oha { };
 
+  rlvm = callPackage ./rlvm { };
+
   snownews = callPackage ./snownews { };
 
   textidote = callPackage ./textidote { };

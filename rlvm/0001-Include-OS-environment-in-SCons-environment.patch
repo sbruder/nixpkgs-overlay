@@ -1,0 +1,25 @@
+From c7e20165399adaca1b8373ead456291eadf16229 Mon Sep 17 00:00:00 2001
+From: Simon Bruder <simon@sbruder.de>
+Date: Wed, 28 Jul 2021 18:35:19 +0200
+Subject: [PATCH] Include OS environment in SCons environment
+
+---
+ SConstruct | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/SConstruct b/SConstruct
+index f67673a3..f14cf1ad 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -19,6 +19,8 @@ AddOption('--fullstatic', action='store_true',
+ 
+ # Set libraries used by all configurations and all binaries in rlvm.
+ env = Environment(
++  ENV = os.environ,
++
+   tools = ["default", "rlvm"],
+ 
+   LIBS = ["z"],
+-- 
+2.31.1
+
