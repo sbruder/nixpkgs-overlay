@@ -43,6 +43,6 @@ buildPythonPackage rec {
     homepage = "https://github.com/alyssaq/face_morpher";
     license = licenses.mit;
     maintainers = with maintainers; [ sbruder ];
-    platforms = platforms.unix;
+    platforms = platforms.linux;
   };
 }
