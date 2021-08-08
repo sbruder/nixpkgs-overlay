@@ -41,6 +41,7 @@
             face_morpher
             nsz
             oha
+            playgsf
             snownews
             textidote
             unxwb
