@@ -39,6 +39,7 @@
             deemix
             fSpy
             face_morpher
+            gust_tools
             nsz
             oha
             playgsf

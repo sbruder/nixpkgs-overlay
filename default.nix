@@ -25,6 +25,8 @@ in
 
   face_morpher = callPythonPackage ./face_morpher { };
 
+  gust_tools = callPackage ./gust_tools { };
+
   mpvScripts = prev.mpvScripts // {
     pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
   };
