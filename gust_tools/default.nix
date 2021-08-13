@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchFromGitHub }:
+{ lib, stdenv, fetchFromGitHub, fetchpatch }:
 
 stdenv.mkDerivation rec {
   pname = "gust_tools";
@@ -12,7 +12,10 @@ stdenv.mkDerivation rec {
   };
 
   patches = [
-    ./0001-gust_ebm-fix-compiler-error-about-different-signs.patch
+    (fetchpatch {
+      url = "https://github.com/VitaSmith/gust_tools/commit/b564b54b1825e15bc743450605d8dae0a7366d1e.patch";
+      sha256 = "sha256-geTqFT89U2JRJwKduqkRbO0DlOvKxqqquvVVVIu2IB8=";
+    })
   ];
 
   installPhase = ''
