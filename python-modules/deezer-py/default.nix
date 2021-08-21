@@ -7,16 +7,15 @@
 
 buildPythonPackage rec {
   pname = "deezer-py";
-  version = "0.0.15";
+  version = "1.1.3";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "0sg4r8f11b11ygb5ra7gwsnxjhkzwhaniii0v69kqcypkxncc3ys";
+    sha256 = "sha256-FdLSJFALeGcecLAHk9khJTKlMd3Mec/w/PGQOHqxYMQ=";
   };
 
   propagatedBuildInputs = [
     requests
-    eventlet
   ];
 
   doCheck = false; # OSError: protocol not found
