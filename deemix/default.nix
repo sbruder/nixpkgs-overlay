@@ -12,17 +12,16 @@
 
 buildPythonPackage rec {
   pname = "deemix";
-  version = "2.0.16";
+  version = "3.4.3";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "0q5nzx540a2xk2gw225yjrjn2py4b7naim6kk7li97gwarp9r0h9";
+    sha256 = "sha256-cSLjbowG98pbEzGB17Rkhli90xeOyzOcEglXb5SeNJE=";
   };
 
   propagatedBuildInputs = [
     click
     deezer-py
-    eventlet
     mutagen
     pycryptodomex
     requests
@@ -33,7 +32,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "A python library that lets you download millions of songs, soundtracks, albums in high-quality mp3 and FLAC";
-    homepage = "https://download.deemix.app/";
+    homepage = "https://deemix.app/";
     license = licenses.lgpl3Plus;
     maintainers = with maintainers; [ sbruder ];
     platforms = platforms.all;
