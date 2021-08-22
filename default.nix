@@ -27,6 +27,8 @@ in
 
   gust_tools = callPackage ./gust_tools { };
 
+  httpdirfs = callPackage ./httpdirfs { };
+
   mpvScripts = prev.mpvScripts // {
     pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
   };

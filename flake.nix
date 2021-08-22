@@ -40,6 +40,7 @@
             fSpy
             face_morpher
             gust_tools
+            httpdirfs
             nsz
             oha
             playgsf
