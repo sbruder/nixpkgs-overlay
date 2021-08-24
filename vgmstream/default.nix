@@ -2,13 +2,13 @@
 
 stdenv.mkDerivation rec {
   pname = "vgmstream";
-  version = "r1050-3448-g77cc431b";
+  version = "r1626";
 
   src = fetchFromGitHub {
     owner = "vgmstream";
     repo = "vgmstream";
     rev = version;
-    sha256 = "030q02c9li14by7vm00gn6v3m4dxxmfwiy9iyz3xsgzq1i7pqc1d";
+    sha256 = "sha256-PdG+nkr8f/kVJpJGDvfMv7cEnYFw0dikzIMEGvm/dGQ=";
   };
 
   nativeBuildInputs = [ cmake pkg-config ];
