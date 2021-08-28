@@ -11,6 +11,14 @@
 
   outputs = { self, flake-utils, nixpkgs, nix-pre-commit-hooks }: {
     overlay = import ./default.nix;
+
+    nixosModules =
+      let
+        inherit (nixpkgs) lib;
+      in
+      {
+        hcloud_exporter.imports = lib.singleton ./hcloud_exporter/module.nix;
+      };
   } // flake-utils.lib.eachDefaultSystem (system:
     let
       pkgs = import nixpkgs { inherit system; overlays = [ self.overlay ]; };
