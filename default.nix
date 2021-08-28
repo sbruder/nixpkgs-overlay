@@ -27,6 +27,8 @@ in
 
   gust_tools = callPackage ./gust_tools { };
 
+  hcloud_exporter = callPackage ./hcloud_exporter { };
+
   httpdirfs = callPackage ./httpdirfs { };
 
   mpvScripts = prev.mpvScripts // {
