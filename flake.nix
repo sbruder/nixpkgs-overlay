@@ -21,7 +21,11 @@
       };
   } // flake-utils.lib.eachDefaultSystem (system:
     let
-      pkgs = import nixpkgs { inherit system; overlays = [ self.overlay ]; };
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [ self.overlay ];
+        config.allowUnfree = true;
+      };
       lib = pkgs.lib;
     in
     rec {
