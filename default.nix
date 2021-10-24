@@ -35,6 +35,8 @@ in
     pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
   };
 
+  netstick = callPackage ./netstick { };
+
   nsz = callPythonPackage ./nsz { };
 
   oha = callPackage ./oha { };
