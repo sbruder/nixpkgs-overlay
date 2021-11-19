@@ -47,6 +47,7 @@
         (flake-utils.lib.flattenTree {
           inherit (pkgs)
             VisiCut
+            colorchord2
             cyanrip
             deemix
             fSpy

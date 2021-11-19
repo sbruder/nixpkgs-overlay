@@ -17,6 +17,8 @@ in
   };
   python3Packages = prev.recurseIntoAttrs final.python3.pkgs;
 
+  colorchord2 = callPackage ./colorchord2 { };
+
   cyanrip = callPackage ./cyanrip { };
 
   deemix = callPythonPackage ./deemix { };
