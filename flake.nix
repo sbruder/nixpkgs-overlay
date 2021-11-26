@@ -54,7 +54,6 @@
             face_morpher
             gust_tools
             hcloud_exporter
-            httpdirfs
             netstick
             nsz
             oha
