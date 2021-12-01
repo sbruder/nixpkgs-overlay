@@ -19,8 +19,6 @@ in
 
   colorchord2 = callPackage ./colorchord2 { };
 
-  cyanrip = callPackage ./cyanrip { };
-
   deemix = callPythonPackage ./deemix { };
 
   fSpy = callPackage ./fSpy { };

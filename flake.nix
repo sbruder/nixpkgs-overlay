@@ -48,7 +48,6 @@
           inherit (pkgs)
             VisiCut
             colorchord2
-            cyanrip
             deemix
             fSpy
             face_morpher
