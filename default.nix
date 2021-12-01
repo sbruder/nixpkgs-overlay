@@ -37,8 +37,6 @@ in
 
   nsz = callPythonPackage ./nsz { };
 
-  oha = callPackage ./oha { };
-
   playgsf = callPackage ./playgsf { };
 
   snownews = callPackage ./snownews { };

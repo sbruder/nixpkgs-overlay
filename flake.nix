@@ -55,7 +55,6 @@
             hcloud_exporter
             netstick
             nsz
-            oha
             playgsf
             snownews
             textidote
