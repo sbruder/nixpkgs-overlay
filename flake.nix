@@ -59,8 +59,7 @@
             snownews
             textidote
             unxwb
-            vgmstream
-            x264-unstable;
+            vgmstream;
 
           mpvScripts = lib.recurseIntoAttrs {
             inherit (pkgs.mpvScripts)
