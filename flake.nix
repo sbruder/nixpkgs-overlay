@@ -53,6 +53,7 @@
             face_morpher
             gust_tools
             hcloud_exporter
+            linuxmotehook2
             netstick
             nsz
             playgsf

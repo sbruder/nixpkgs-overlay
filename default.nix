@@ -29,6 +29,8 @@ in
 
   hcloud_exporter = callPackage ./hcloud_exporter { };
 
+  linuxmotehook2 = callPackage ./linuxmotehook2 { };
+
   mpvScripts = prev.mpvScripts // {
     pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
   };
