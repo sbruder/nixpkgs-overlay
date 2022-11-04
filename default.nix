@@ -42,7 +42,5 @@ in
 
   unxwb = callPackage ./unxwb { };
 
-  vgmstream = callPackage ./vgmstream { };
-
   VisiCut = callPackage ./VisiCut { };
 }

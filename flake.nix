@@ -57,8 +57,7 @@
             nsz
             playgsf
             textidote
-            unxwb
-            vgmstream;
+            unxwb;
 
           mpvScripts = lib.recurseIntoAttrs {
             inherit (pkgs.mpvScripts)
