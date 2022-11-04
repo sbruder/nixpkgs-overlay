@@ -41,8 +41,6 @@ in
 
   playgsf = callPackage ./playgsf { };
 
-  snownews = callPackage ./snownews { };
-
   textidote = callPackage ./textidote { };
 
   unxwb = callPackage ./unxwb { };

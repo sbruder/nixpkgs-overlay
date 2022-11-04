@@ -57,7 +57,6 @@
             netstick
             nsz
             playgsf
-            snownews
             textidote
             unxwb
             vgmstream;
