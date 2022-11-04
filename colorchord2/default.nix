@@ -4,9 +4,9 @@
 , pkg-config
 , alsa-lib
 , freeglut
-, libusb
+, libusb1
 , pulseaudio
-, xlibs
+, xorg
 }:
 
 stdenv.mkDerivation rec {
@@ -25,9 +25,9 @@ stdenv.mkDerivation rec {
   buildInputs = [
     alsa-lib
     freeglut
-    libusb
+    libusb1
     pulseaudio
-  ] ++ (with xlibs; [
+  ] ++ (with xorg; [
     libX11
     libXext
     libXinerama
