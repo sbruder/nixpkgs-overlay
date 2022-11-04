@@ -8,8 +8,6 @@ in
   python3 = prev.python3.override {
     packageOverrides = final: prev:
       {
-        deezer-py = callPythonPackage ./python-modules/deezer-py { };
-
         enlighten = callPythonPackage ./python-modules/enlighten { };
 
         prefixed = callPythonPackage ./python-modules/prefixed { };
@@ -19,7 +17,6 @@ in
 
   colorchord2 = callPackage ./colorchord2 { };
 
-  deemix = callPythonPackage ./deemix { };
 
   fSpy = callPackage ./fSpy { };
 

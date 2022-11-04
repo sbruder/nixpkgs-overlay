@@ -48,7 +48,6 @@
           inherit (pkgs)
             VisiCut
             colorchord2
-            deemix
             fSpy
             face_morpher
             gust_tools
