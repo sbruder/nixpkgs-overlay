@@ -47,6 +47,7 @@
         (flake-utils.lib.flattenTree {
           inherit (pkgs)
             VisiCut
+            afancontrol
             colorchord2
             fSpy
             face_morpher

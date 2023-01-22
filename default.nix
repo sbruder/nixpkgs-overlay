@@ -15,6 +15,8 @@ in
   };
   python3Packages = prev.recurseIntoAttrs final.python3.pkgs;
 
+  afancontrol = callPythonPackage ./afancontrol { };
+
   colorchord2 = callPackage ./colorchord2 { };
 
 
