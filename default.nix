@@ -45,4 +45,6 @@ in
   unxwb = callPackage ./unxwb { };
 
   VisiCut = callPackage ./VisiCut { };
+
+  whisper_cpp = callPackage ./whisper_cpp { };
 }
