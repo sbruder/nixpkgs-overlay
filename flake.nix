@@ -7,9 +7,13 @@
     nix-pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix/master";
     nix-pre-commit-hooks.inputs.flake-utils.follows = "flake-utils";
     nix-pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
+
+    poetry2nix.url = "github:nix-community/poetry2nix";
+    poetry2nix.inputs.flake-utils.follows = "flake-utils";
+    poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs, nix-pre-commit-hooks }: {
+  outputs = { self, flake-utils, nixpkgs, nix-pre-commit-hooks, poetry2nix }: {
     overlay = import ./default.nix;
 
     nixosModules =
@@ -23,7 +27,7 @@
     let
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ self.overlay ];
+        overlays = [ self.overlay poetry2nix.overlay ]; # FIXME: remove poetry2nix when newer version is in nixpkgs
         config.allowUnfree = true;
       };
       lib = pkgs.lib;
@@ -48,6 +52,7 @@
           inherit (pkgs)
             VisiCut
             afancontrol
+            bandcamp-downloader
             colorchord2
             fSpy
             face_morpher

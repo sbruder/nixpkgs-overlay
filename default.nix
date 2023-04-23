@@ -17,8 +17,9 @@ in
 
   afancontrol = callPythonPackage ./afancontrol { };
 
-  colorchord2 = callPackage ./colorchord2 { };
+  bandcamp-downloader = callPackage ./bandcamp-downloader { };
 
+  colorchord2 = callPackage ./colorchord2 { };
 
   fSpy = callPackage ./fSpy { };
 
