@@ -11,13 +11,13 @@
 
 stdenv.mkDerivation rec {
   pname = "colorchord";
-  version = "unstable-2021-11-12";
+  version = "2.0.2";
 
   src = fetchFromGitHub {
     owner = "cnlohr";
     repo = pname;
-    rev = "0a44c600243636ef8fbaf11c728c49412e8ad8d4";
-    sha256 = "sha256-a9nOdj7Q8vDoseoE+u5/DWRxSCXiSxs/7r74PcoDc2k=";
+    rev = "v${version}";
+    sha256 = "sha256-C+xx0TJf0/y/fqdfSsJ7i1bnPQODYcxY9XM4l3DQ0UY=";
     fetchSubmodules = true;
   };
 
