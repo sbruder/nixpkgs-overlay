@@ -47,5 +47,7 @@ in
 
   VisiCut = callPackage ./VisiCut { };
 
+  wa-crypt-tools = callPythonPackage ./wa-crypt-tools { };
+
   whisper_cpp = callPackage ./whisper_cpp { };
 }

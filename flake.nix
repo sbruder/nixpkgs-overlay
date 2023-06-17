@@ -64,6 +64,7 @@
             playgsf
             textidote
             unxwb
+            wa-crypt-tools
             whisper_cpp;
 
           mpvScripts = lib.recurseIntoAttrs {
