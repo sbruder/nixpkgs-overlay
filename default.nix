@@ -10,6 +10,8 @@ rec {
 
     netbox-inventory = callPythonPackage ./python-modules/netbox-inventory { };
 
+    netbox-topology-views = callPythonPackage ./python-modules/netbox-topology-views { };
+
     prefixed = callPythonPackage ./python-modules/prefixed { };
   }));
 
