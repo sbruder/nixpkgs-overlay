@@ -8,6 +8,8 @@ rec {
   pythonPackagesExtensions = prev.pythonPackagesExtensions ++ (prev.lib.singleton (final: prev: {
     enlighten = callPythonPackage ./python-modules/enlighten { };
 
+    netbox-inventory = callPythonPackage ./python-modules/netbox-inventory { };
+
     prefixed = callPythonPackage ./python-modules/prefixed { };
   }));
 
