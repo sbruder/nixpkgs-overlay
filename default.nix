@@ -4,16 +4,12 @@ let
 
   callPythonPackage = prev.python3Packages.callPackage;
 in
-{
-  python3 = prev.python3.override {
-    packageOverrides = final: prev:
-      {
-        enlighten = callPythonPackage ./python-modules/enlighten { };
+rec {
+  pythonPackagesExtensions = prev.pythonPackagesExtensions ++ (prev.lib.singleton (final: prev: {
+    enlighten = callPythonPackage ./python-modules/enlighten { };
 
-        prefixed = callPythonPackage ./python-modules/prefixed { };
-      };
-  };
-  python3Packages = prev.recurseIntoAttrs final.python3.pkgs;
+    prefixed = callPythonPackage ./python-modules/prefixed { };
+  }));
 
   afancontrol = callPythonPackage ./afancontrol { };
 
