@@ -59,6 +59,7 @@
             gust_tools
             hcloud_exporter
             linuxmotehook2
+            listenbrainz-content-resolver
             netstick
             nsz
             playgsf

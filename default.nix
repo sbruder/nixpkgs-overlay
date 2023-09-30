@@ -33,6 +33,8 @@ rec {
 
   linuxmotehook2 = callPackage ./linuxmotehook2 { };
 
+  listenbrainz-content-resolver = callPythonPackage ./listenbrainz-content-resolver { };
+
   mpvScripts = prev.mpvScripts // {
     pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
   };
