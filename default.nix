@@ -12,6 +12,8 @@ rec {
 
     netbox-topology-views = callPythonPackage ./python-modules/netbox-topology-views { };
 
+    nmslib = callPythonPackage ./python-modules/nmslib { };
+
     prefixed = callPythonPackage ./python-modules/prefixed { };
   }));
 
