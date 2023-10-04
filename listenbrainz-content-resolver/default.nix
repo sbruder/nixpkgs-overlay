@@ -31,7 +31,7 @@ let
       setuptools-scm
     ];
 
-    SETUPTOOLS_SCM_PRETEND_VERSION = version;
+    SETUPTOOLS_SCM_PRETEND_VERSION = "0.1.dev1+${version}";
   };
 in
 buildPythonPackage rec {
@@ -67,7 +67,7 @@ buildPythonPackage rec {
     setuptools-scm
   ];
 
-  SETUPTOOLS_SCM_PRETEND_VERSION = version;
+  SETUPTOOLS_SCM_PRETEND_VERSION = "0.1.dev1+${version}";
 
   doCheck = false;
 
