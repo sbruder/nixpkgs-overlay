@@ -8,7 +8,6 @@
 , regex
 , scikit-learn
 , unidecode
-, pythonRelaxDepsHook
 , setuptools-scm
 }:
 let
@@ -37,23 +36,21 @@ let
 in
 buildPythonPackage rec {
   pname = "ListenBrainz-Content-Resolver";
-  # FIXME
-  # This should actually reflect the real version.
-  # As there currently are no tagged versions,
-  # this needs to be forged,
-  # because pythonRelaxDepsHook has problems with unstable-YYYY-MM-DD as a version.
-  version = "1.0.0";
+  version = "unstable-2023-10-03";
 
   src = fetchFromGitHub {
     owner = "metabrainz";
     repo = pname;
     rev = "6caa43df1d17a974ae27a91f1aaf663952cf0ed9";
-    sha256 = "0000000000000000000000000000000000000000000000000000";
+    sha256 = "sha256-m11buP7AhpLXmIPK9z3r3Gtr8L6A5MAt+SyuIT5bK9Q=";
   };
 
   postPatch = ''
     # Make model discoverable by setuptools’ find_packages
     touch lb_content_resolver/model/__init__.py
+
+    # pythonRelaxDepsHook does not work when this packages’ version is set to unstable-YYYY-MM-DD
+    sed -i setup.py -e 's/"\([^=]*\)==[^"]*"/"\1"/g'
   '';
 
   propagatedBuildInputs = [
@@ -67,11 +64,8 @@ buildPythonPackage rec {
     unidecode
   ];
   nativeBuildInputs = [
-    pythonRelaxDepsHook
     setuptools-scm
   ];
-
-  pythonRelaxDeps = true;
 
   SETUPTOOLS_SCM_PRETEND_VERSION = version;
 
