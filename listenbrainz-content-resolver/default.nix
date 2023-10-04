@@ -47,8 +47,8 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "metabrainz";
     repo = pname;
-    rev = "50d55485d43fe3bdf2fb3a4546b3c0031edf85ee";
-    sha256 = "sha256-mm8zHF87S13bzeSfWKHgO/cU3ulvA7I8h5EFsnBIVMo=";
+    rev = "6caa43df1d17a974ae27a91f1aaf663952cf0ed9";
+    sha256 = "0000000000000000000000000000000000000000000000000000";
   };
 
   postPatch = ''
