@@ -73,7 +73,7 @@ buildPythonPackage rec {
 
   postInstall = ''
     mkdir -p $out/bin
-    cp $src/resolve.py $out/bin/${pname}
+    cp $src/resolve.py $out/bin/lb-content-resolver
   '';
 
   meta = with lib; {
