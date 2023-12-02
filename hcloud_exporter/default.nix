@@ -11,7 +11,7 @@ buildGoModule rec {
     sha256 = "sha256-7UJhM/HLhRySTQ1lNLMgfKD9GDOivRMhGGNVLQknMLA=";
   };
 
-  vendorSha256 = "sha256-qWYj/BCuY/995pLiBUoMtKvDV81j17c2GJeqhgBWn74=";
+  vendorHash = "sha256-qWYj/BCuY/995pLiBUoMtKvDV81j17c2GJeqhgBWn74=";
 
   meta = with lib; {
     description = "Prometheus exporter for Hetzner Cloud";

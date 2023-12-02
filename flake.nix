@@ -14,7 +14,7 @@
   };
 
   outputs = { self, flake-utils, nixpkgs, nix-pre-commit-hooks, poetry2nix }: {
-    overlay = import ./default.nix;
+    overlays.default = import ./default.nix;
 
     nixosModules =
       let
@@ -27,7 +27,7 @@
     let
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ self.overlay poetry2nix.overlay ]; # FIXME: remove poetry2nix when newer version is in nixpkgs
+        overlays = [ self.overlays.default poetry2nix.overlays.default ]; # FIXME: remove poetry2nix when newer version is in nixpkgs
         config.allowUnfree = true;
       };
       lib = pkgs.lib;
