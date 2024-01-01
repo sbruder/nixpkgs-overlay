@@ -60,6 +60,7 @@
             hcloud_exporter
             linuxmotehook2
             listenbrainz-content-resolver
+            liquidsfz
             netstick
             nsz
             playgsf

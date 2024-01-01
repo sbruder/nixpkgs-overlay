@@ -35,6 +35,8 @@ rec {
 
   listenbrainz-content-resolver = callPythonPackage ./listenbrainz-content-resolver { };
 
+  liquidsfz = callPackage ./liquidsfz { };
+
   mpvScripts = prev.mpvScripts // {
     pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
   };
