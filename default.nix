@@ -37,6 +37,8 @@ rec {
 
   liquidsfz = callPackage ./liquidsfz { };
 
+  mdbook-svgbob = callPackage ./mdbook-svgbob { };
+
   mpvScripts = prev.mpvScripts // {
     pitchcontrol = callPackage ./mpv-scripts/pitchcontrol { };
   };

@@ -61,6 +61,7 @@
             linuxmotehook2
             listenbrainz-content-resolver
             liquidsfz
+            mdbook-svgbob
             netstick
             nsz
             playgsf
