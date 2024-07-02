@@ -1,0 +1,10 @@
+--- a/RasterToSIISLP.cxx
++++ b/RasterToSIISLP.cxx
+@@ -38,6 +38,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <vector>
++#include <cstdio>
+ 
+ #include "SeikoSLPCommands.h"
+ #include "SeikoInstrumentsVendorID.h"

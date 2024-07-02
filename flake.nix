@@ -54,6 +54,7 @@
             afancontrol
             bandcamp-downloader
             colorchord2
+            cups-sii-slp-400-600
             fSpy
             face_morpher
             gust_tools
