@@ -27,7 +27,7 @@
     let
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ self.overlays.default poetry2nix.overlays.default ]; # FIXME: remove poetry2nix when newer version is in nixpkgs
+        overlays = [ self.overlays.default poetry2nix.overlays.default ];
         config.allowUnfree = true;
       };
       lib = pkgs.lib;

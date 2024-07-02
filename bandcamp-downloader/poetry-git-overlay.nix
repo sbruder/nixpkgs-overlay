@@ -5,8 +5,8 @@ self: super: {
     _: {
       src = pkgs.fetchgit {
         url = "https://github.com/easlice/bandcamp-downloader";
-        rev = "f6f4828c286821b006045fa8b85a55e90bfdb376";
-        sha256 = "0dwchw1rz29dir2saag06gf0259fih1crdvb8qjbkywwiflh63bf";
+        rev = "fbf860a3b06af0e02f3c58531b9683f934c23db5";
+        sha256 = "19by94ag1rj02amna1lg9v9qzanf4l606caskxr77092hplkpps3";
       };
     }
   );

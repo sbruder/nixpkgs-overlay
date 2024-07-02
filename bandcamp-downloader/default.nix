@@ -7,8 +7,11 @@ let
       (import ./poetry-git-overlay.nix { inherit pkgs; })
       (final: prev: {
         bandcamp-downloader = prev.bandcamp-downloader.overridePythonAttrs (old: {
+          # HACK
+          version = (builtins.fromTOML (builtins.readFile ./pyproject.toml)).tool.poetry.dependencies.bandcamp-downloader.tag;
+
           postInstall = ''
-            install -D ${old.pname}.py $out/bin/${old.pname}
+            mv $out/bin/${old.pname}{.py,}
           '';
 
           meta = old.meta // (with lib; {
@@ -23,6 +26,11 @@ let
           propagatedBuildInputs = old.propagatedBuildInputs ++ (with prev; [
             setuptools
             hatchling
+          ]);
+        });
+        backports-tarfile = prev.backports-tarfile.overridePythonAttrs (old: {
+          propagatedBuildInputs = old.propagatedBuildInputs ++ (with prev; [
+            setuptools
           ]);
         });
       })
