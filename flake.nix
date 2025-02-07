@@ -76,11 +76,5 @@
               pitchcontrol;
           };
         });
-
-      # My hydra only has x86_64-linux builders
-      hydraJobs =
-        if lib.elem system [ "x86_64-linux" ]
-        then packages
-        else { };
     });
 }
