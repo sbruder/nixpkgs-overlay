@@ -70,7 +70,8 @@
             textidote
             unxwb
             wa-crypt-tools
-            whisper_cpp;
+            whisper_cpp
+            wmbusmeters;
 
           mpvScripts = lib.recurseIntoAttrs {
             inherit (pkgs.mpvScripts)

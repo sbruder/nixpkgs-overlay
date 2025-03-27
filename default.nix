@@ -62,4 +62,6 @@ rec {
   wa-crypt-tools = callPythonPackage ./wa-crypt-tools { };
 
   whisper_cpp = callPackage ./whisper_cpp { };
+
+  wmbusmeters = callPackage ./wmbusmeters { };
 }
