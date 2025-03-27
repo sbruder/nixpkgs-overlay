@@ -51,6 +51,8 @@ rec {
 
   playgsf = callPackage ./playgsf { };
 
+  rtl-wmbus = callPackage ./rtl-wmbus { };
+
   textidote = callPackage ./textidote { };
 
   unxwb = callPackage ./unxwb { };

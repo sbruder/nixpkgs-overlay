@@ -66,6 +66,7 @@
             netstick
             nsz
             playgsf
+            rtl-wmbus
             textidote
             unxwb
             wa-crypt-tools
