@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     nix-pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix/master";
-    nix-pre-commit-hooks.inputs.flake-utils.follows = "flake-utils";
     nix-pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
 
     poetry2nix.url = "github:nix-community/poetry2nix";
