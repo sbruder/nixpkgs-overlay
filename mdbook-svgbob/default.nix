@@ -11,7 +11,7 @@ rustPlatform.buildRustPackage rec {
     hash = "sha256-5V8mTyIyKS/AgfGIM8oiVFvq/9cBlmxhUuBir71GElQ=";
   };
 
-  cargoHash = "sha256-0tWRX4Nzp/ExkAY5MVMsNPlRwxW8ZUm1V27mXA4UvyU=";
+  cargoHash = "sha256-XPAzYIo2bAVRex2WB8LI4QEy+NH5RPUkBkybu/B/mac=";
 
   meta = {
     description = "SvgBob mdbook preprocessor which swaps code-blocks with SVG";
