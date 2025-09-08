@@ -66,6 +66,7 @@
             nsz
             playgsf
             rtl-wmbus
+            tagpatch
             textidote
             unxwb
             wa-crypt-tools

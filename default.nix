@@ -53,6 +53,8 @@ rec {
 
   rtl-wmbus = callPackage ./rtl-wmbus { };
 
+  tagpatch = callPythonPackage ./tagpatch { };
+
   textidote = callPackage ./textidote { };
 
   unxwb = callPackage ./unxwb { };
