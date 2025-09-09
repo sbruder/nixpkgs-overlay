@@ -29,6 +29,8 @@ rec {
 
   face_morpher = callPythonPackage ./face_morpher { };
 
+  feishin-web = callPackage ./feishin-web { };
+
   gust_tools = callPackage ./gust_tools { };
 
   hcloud_exporter = callPackage ./hcloud_exporter { };

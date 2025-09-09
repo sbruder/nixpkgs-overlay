@@ -56,6 +56,7 @@
             cups-sii-slp-400-600
             fSpy
             face_morpher
+            feishin-web
             gust_tools
             hcloud_exporter
             linuxmotehook2
