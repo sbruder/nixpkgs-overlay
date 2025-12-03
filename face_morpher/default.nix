@@ -1,4 +1,4 @@
-{ lib, fetchurl, runCommandNoCC, buildPythonPackage, fetchFromGitHub, dlib, docopt, matplotlib, numpy, opencv4, scipy, model ? null }:
+{ lib, fetchurl, runCommandNoCC, buildPythonPackage, fetchFromGitHub, setuptools, dlib, docopt, matplotlib, numpy, opencv4, scipy, model ? null }:
 let
   model' = if !isNull model then model else
   fetchurl {
@@ -24,6 +24,9 @@ buildPythonPackage rec {
     rev = "7a30611cd9d33469e843cec9cfa23ccf819386a8";
     sha256 = "09ahar661r5046gr3qsv2z22x50jz1bv116ci55fsvcjzv64rygw";
   };
+
+  pyproject = true;
+  build-system = [ setuptools ];
 
   propagatedBuildInputs = [
     dlib

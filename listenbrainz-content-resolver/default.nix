@@ -1,6 +1,7 @@
 { lib
 , buildPythonPackage
 , fetchFromGitHub
+, setuptools
 , click
 , mutagen
 , nmslib
@@ -44,6 +45,9 @@ buildPythonPackage rec {
     rev = "6caa43df1d17a974ae27a91f1aaf663952cf0ed9";
     sha256 = "sha256-m11buP7AhpLXmIPK9z3r3Gtr8L6A5MAt+SyuIT5bK9Q=";
   };
+
+  pyproject = true;
+  build-system = [ setuptools ];
 
   postPatch = ''
     # Make model discoverable by setuptools’ find_packages

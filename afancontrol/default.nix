@@ -1,4 +1,4 @@
-{ lib, buildPythonPackage, fetchPypi, click, pytestCheckHook, requests }:
+{ lib, buildPythonPackage, fetchPypi, setuptools, click, pytestCheckHook, requests }:
 
 buildPythonPackage rec {
   pname = "afancontrol";
@@ -8,6 +8,9 @@ buildPythonPackage rec {
     inherit pname version;
     sha256 = "sha256-FAOZWoSi7IgONtNspUxR4h5FnkkrNrE0N861t5LHpGw=";
   };
+
+  pyproject = true;
+  build-system = [ setuptools ];
 
   propagatedBuildInputs = [ click ];
   checkInputs = [ pytestCheckHook requests ];

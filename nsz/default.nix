@@ -1,6 +1,7 @@
 { lib
 , buildPythonPackage
 , fetchPypi
+, setuptools
 , pycryptodome
 , zstandard
 , enlighten
@@ -14,6 +15,9 @@ buildPythonPackage rec {
     inherit pname version;
     sha256 = "1gckszvkjklrslidpfidbzcigpwwj4s0chrnrg16wvh3r93aiaci";
   };
+
+  pyproject = true;
+  build-system = [ setuptools ];
 
   propagatedBuildInputs = [
     pycryptodome
