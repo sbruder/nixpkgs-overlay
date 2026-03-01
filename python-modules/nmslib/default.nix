@@ -2,6 +2,7 @@
 , buildPythonPackage
 , fetchPypi
 , fetchpatch
+, setuptools
 , numpy
 , psutil
 , pybind11
@@ -24,6 +25,9 @@ buildPythonPackage rec {
       sha256 = "sha256-R/y6BbnZRe7VM5XCbes6Z5A5N66r+8SCA2Hy6K301IM=";
     })
   ];
+
+  pyproject = true;
+  build-system = [ setuptools ];
 
   propagatedBuildInputs = [
     numpy
