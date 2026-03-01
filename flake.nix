@@ -67,6 +67,7 @@
             nsz
             playgsf
             rtl-wmbus
+            sbom2doc
             tagpatch
             textidote
             unxwb

@@ -55,6 +55,8 @@ rec {
 
   rtl-wmbus = callPackage ./rtl-wmbus { };
 
+  sbom2doc = callPythonPackage ./sbom2doc { };
+
   tagpatch = callPythonPackage ./tagpatch { };
 
   textidote = callPackage ./textidote { };
