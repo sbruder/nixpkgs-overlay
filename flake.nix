@@ -66,6 +66,7 @@
             netstick
             nsz
             playgsf
+            pyplayready
             rtl-wmbus
             sbom2doc
             tagpatch

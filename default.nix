@@ -53,6 +53,8 @@ rec {
 
   playgsf = callPackage ./playgsf { };
 
+  pyplayready = callPythonPackage ./pyplayready { };
+
   rtl-wmbus = callPackage ./rtl-wmbus { };
 
   sbom2doc = callPythonPackage ./sbom2doc { };
