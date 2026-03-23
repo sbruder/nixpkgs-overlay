@@ -69,6 +69,7 @@
             pyplayready
             rtl-wmbus
             sbom2doc
+            sbomaudit
             tagpatch
             textidote
             unxwb
