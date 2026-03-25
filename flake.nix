@@ -59,6 +59,7 @@
             face_morpher
             feishin-web
             gust_tools
+            haproxy-lua-cors
             hcloud_exporter
             komf
             linuxmotehook2

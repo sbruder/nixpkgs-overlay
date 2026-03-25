@@ -33,6 +33,8 @@ rec {
 
   gust_tools = callPackage ./gust_tools { };
 
+  haproxy-lua-cors = callPackage ./haproxy-lua-cors { };
+
   hcloud_exporter = callPackage ./hcloud_exporter { };
 
   komf = callPackage ./komf { };
