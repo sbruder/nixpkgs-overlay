@@ -21,6 +21,7 @@
       in
       {
         hcloud_exporter.imports = lib.singleton ./hcloud_exporter/module.nix;
+        komf.imports = lib.singleton ./komf/module.nix;
       };
   } // flake-utils.lib.eachDefaultSystem (system:
     let
