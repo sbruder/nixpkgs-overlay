@@ -35,6 +35,8 @@ rec {
 
   hcloud_exporter = callPackage ./hcloud_exporter { };
 
+  komf = callPackage ./komf { };
+
   linuxmotehook2 = callPackage ./linuxmotehook2 { };
 
   listenbrainz-content-resolver = callPythonPackage ./listenbrainz-content-resolver { };

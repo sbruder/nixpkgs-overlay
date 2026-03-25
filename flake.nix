@@ -59,6 +59,7 @@
             feishin-web
             gust_tools
             hcloud_exporter
+            komf
             linuxmotehook2
             listenbrainz-content-resolver
             liquidsfz
