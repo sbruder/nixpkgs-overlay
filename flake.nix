@@ -61,6 +61,7 @@
             gust_tools
             haproxy-auth-request
             haproxy-lua-cors
+            haproxy-lua-http
             hcloud_exporter
             knst0-mdl
             komf

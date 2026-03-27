@@ -36,6 +36,7 @@ rec {
   haproxy-auth-request = callPackage ./haproxy-auth-request { };
 
   haproxy-lua-cors = callPackage ./haproxy-lua-cors { };
+  haproxy-lua-http = callPackage ./haproxy-lua-http { };
 
   hcloud_exporter = callPackage ./hcloud_exporter { };
 
