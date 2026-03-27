@@ -50,6 +50,8 @@ rec {
 
   liquidsfz = callPackage ./liquidsfz { };
 
+  luajson = prev.luaPackages.callPackage ./luajson { };
+
   mdbook-svgbob = callPackage ./mdbook-svgbob { };
 
   mpvScripts = prev.mpvScripts // {

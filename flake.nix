@@ -68,6 +68,7 @@
             linuxmotehook2
             listenbrainz-content-resolver
             liquidsfz
+            luajson
             mdbook-svgbob
             netstick
             nsz
