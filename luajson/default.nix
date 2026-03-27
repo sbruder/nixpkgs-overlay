@@ -2,7 +2,7 @@
 
 buildLuarocksPackage {
   pname = "luajson";
-  version = "1.3.4-1";
+  version = "unstable-2023-10-10";
 
   knownRockspec = (fetchurl {
     url = "mirror://luarocks/luajson-1.3.4-1.rockspec";
@@ -12,8 +12,8 @@ buildLuarocksPackage {
   src = fetchFromGitHub {
     owner = "harningt";
     repo = "luajson";
-    rev = "1.3.4";
-    hash = "sha256-JaJsjN5Gp+8qswfzl5XbHRQMfaCAJpWDWj9DYWJ0gEI=";
+    rev = "6ecaf9bea8b121a9ffca5a470a2080298557b55d";
+    hash = "sha256-56G0NqIpavKHMQWUxy+Bp7G4ZKrQwUZ2C5e7GJxUJeg=";
   };
 
   disabled = luaOlder "5.1";
