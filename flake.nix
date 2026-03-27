@@ -61,6 +61,7 @@
             gust_tools
             haproxy-lua-cors
             hcloud_exporter
+            knst0-mdl
             komf
             linuxmotehook2
             listenbrainz-content-resolver

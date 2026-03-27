@@ -37,6 +37,8 @@ rec {
 
   hcloud_exporter = callPackage ./hcloud_exporter { };
 
+  knst0-mdl = callPackage ./knst0-mdl { };
+
   komf = callPackage ./komf { };
 
   linuxmotehook2 = callPackage ./linuxmotehook2 { };
