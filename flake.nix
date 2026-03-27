@@ -59,6 +59,7 @@
             face_morpher
             feishin-web
             gust_tools
+            haproxy-auth-request
             haproxy-lua-cors
             hcloud_exporter
             knst0-mdl
