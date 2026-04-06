@@ -58,6 +58,7 @@
             fSpy
             face_morpher
             feishin-web
+            gamdl
             gust_tools
             haproxy-auth-request
             haproxy-lua-cors
