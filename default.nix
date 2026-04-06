@@ -6,6 +6,8 @@ let
 in
 rec {
   pythonPackagesExtensions = prev.pythonPackagesExtensions ++ (prev.lib.singleton (final: prev: {
+    dataclass-click = callPythonPackage ./python-modules/dataclass-click { };
+
     enlighten = callPythonPackage ./python-modules/enlighten { };
 
     netbox-inventory = callPythonPackage ./python-modules/netbox-inventory { };
