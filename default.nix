@@ -19,6 +19,8 @@ rec {
     prefixed = callPythonPackage ./python-modules/prefixed { };
 
     pymp4 = callPythonPackage ./python-modules/pymp4 { };
+
+    pywidevine = callPythonPackage ./python-modules/pywidevine { };
   }));
 
   afancontrol = callPythonPackage ./afancontrol { };
