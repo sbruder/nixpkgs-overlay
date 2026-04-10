@@ -25,8 +25,6 @@ rec {
 
   bandcamp-downloader = callPackage ./bandcamp-downloader { };
 
-  colorchord2 = callPackage ./colorchord2 { };
-
   cups-sii-slp-400-600 = callPackage ./cups-sii-slp-400-600 { };
 
   face_morpher = callPythonPackage ./face_morpher { };

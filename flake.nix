@@ -53,7 +53,6 @@
             VisiCut
             afancontrol
             bandcamp-downloader
-            colorchord2
             cups-sii-slp-400-600
             face_morpher
             feishin-web
