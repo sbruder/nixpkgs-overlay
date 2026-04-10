@@ -1,4 +1,4 @@
-{ lib, fetchurl, runCommandNoCC, buildPythonPackage, fetchFromGitHub, setuptools, dlib, docopt, matplotlib, numpy, opencv4, scipy, model ? null }:
+{ lib, fetchurl, runCommand, buildPythonPackage, fetchFromGitHub, setuptools, dlib, docopt, matplotlib, numpy, opencv4, scipy, model ? null }:
 let
   model' = if !isNull model then model else
   fetchurl {
@@ -10,7 +10,7 @@ let
     '';
   };
 
-  modelDir = runCommandNoCC "face_morpher-models" { } ''
+  modelDir = runCommand "face_morpher-models" { } ''
     install -Dm 444 ${lib.escapeShellArg model'} "$out/shape_predictor_68_face_landmarks.dat"
   '';
 in
