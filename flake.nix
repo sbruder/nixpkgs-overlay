@@ -73,7 +73,6 @@
             rtl-wmbus
             sbom2doc
             sbomaudit
-            tagpatch
             textidote
             unxwb
             wa-crypt-tools

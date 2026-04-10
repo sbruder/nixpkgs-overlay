@@ -68,8 +68,6 @@ rec {
 
   sbom2doc = callPythonPackage ./sbom2doc { };
 
-  tagpatch = callPythonPackage ./tagpatch { };
-
   textidote = callPackage ./textidote { };
 
   unxwb = callPackage ./unxwb { };
