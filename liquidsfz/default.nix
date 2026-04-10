@@ -3,28 +3,39 @@
 , fetchFromGitHub
 , autoreconfHook
 , pkg-config
+, libGL
 , libjack2
 , libsndfile
+, libx11
+, libxcursor
+, libxext
+, libxrandr
 , lv2
 , readline
 }:
 
 stdenv.mkDerivation rec {
   pname = "liquidsfz";
-  version = "0.3.2";
+  version = "0.4.1";
 
   src = fetchFromGitHub {
     owner = "swesterfeld";
     repo = pname;
     rev = version;
-    sha256 = "sha256-yIkHUg6q6d+YS9x0+fWEhl65urT9KI73y+W71g2SOoA=";
+    sha256 = "sha256-6E3JT/pWQ1p4RsF9zW2rpOEYn8kCUojVHee7JMZ92wY=";
+    fetchSubmodules = true;
   };
 
   nativeBuildInputs = [ autoreconfHook pkg-config ];
 
   buildInputs = [
+    libGL
     libjack2
     libsndfile
+    libx11
+    libxcursor
+    libxext
+    libxrandr
     lv2
     readline
   ];
