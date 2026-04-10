@@ -52,7 +52,6 @@
           inherit (pkgs)
             VisiCut
             afancontrol
-            bandcamp-downloader
             cups-sii-slp-400-600
             face_morpher
             feishin-web

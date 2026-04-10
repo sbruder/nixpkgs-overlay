@@ -23,8 +23,6 @@ rec {
 
   afancontrol = callPythonPackage ./afancontrol { };
 
-  bandcamp-downloader = callPackage ./bandcamp-downloader { };
-
   cups-sii-slp-400-600 = callPackage ./cups-sii-slp-400-600 { };
 
   face_morpher = callPythonPackage ./face_morpher { };
