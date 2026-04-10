@@ -4,9 +4,11 @@
 , pkg-config
 , alsa-lib
 , freeglut
+, libX11
+, libXext
+, libXinerama
 , libusb1
 , pulseaudio
-, xorg
 }:
 
 stdenv.mkDerivation rec {
@@ -25,13 +27,12 @@ stdenv.mkDerivation rec {
   buildInputs = [
     alsa-lib
     freeglut
-    libusb1
-    pulseaudio
-  ] ++ (with xorg; [
     libX11
     libXext
     libXinerama
-  ]);
+    libusb1
+    pulseaudio
+  ];
 
   postPatch = ''
     substituteInPlace colorchord2/configs.c \
