@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchFromGitHub, librtlsdr, libxml2 }:
+{ lib, stdenv, fetchFromGitHub, rtl-sdr, libxml2 }:
 
 stdenv.mkDerivation rec {
   pname = "wmbusmeters";
@@ -12,8 +12,8 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    librtlsdr
     libxml2
+    rtl-sdr
   ];
 
   NIX_CFLAGS_COMPILE = "-I${libxml2.dev}/include/libxml2";

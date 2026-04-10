@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchFromGitHub, librtlsdr }:
+{ lib, stdenv, fetchFromGitHub, rtl-sdr }:
 
 stdenv.mkDerivation rec {
   pname = "rtl-wmbus";
@@ -12,7 +12,7 @@ stdenv.mkDerivation rec {
   };
 
   buildInputs = [
-    librtlsdr
+    rtl-sdr
   ];
 
   makeFlags = [
