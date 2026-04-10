@@ -10,8 +10,6 @@ rec {
 
     dataclass-click = callPythonPackage ./python-modules/dataclass-click { };
 
-    enlighten = callPythonPackage ./python-modules/enlighten { };
-
     netbox-inventory = callPythonPackage ./python-modules/netbox-inventory { };
 
     netbox-topology-views = callPythonPackage ./python-modules/netbox-topology-views { };
