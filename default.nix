@@ -50,8 +50,6 @@ rec {
 
   linuxmotehook2 = callPackage ./linuxmotehook2 { };
 
-  listenbrainz-content-resolver = callPythonPackage ./listenbrainz-content-resolver { };
-
   liquidsfz = callPackage ./liquidsfz { };
 
   luajson = prev.luaPackages.callPackage ./luajson { };

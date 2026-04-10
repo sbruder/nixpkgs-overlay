@@ -66,7 +66,6 @@
             knst0-mdl
             komf
             linuxmotehook2
-            listenbrainz-content-resolver
             liquidsfz
             luajson
             mdbook-svgbob
