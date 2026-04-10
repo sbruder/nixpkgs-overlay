@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "SFZ sampler";
-    homepage = "https://github.com/cnlohr/colorchord";
+    homepage = "https://github.com/swesterfeld/liquidsfz";
     license = licenses.mpl20;
     maintainers = with maintainers; [ sbruder ];
     platforms = platforms.all;
