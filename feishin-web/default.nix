@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchFromGitHub, nodejs, pnpm_10 }:
+{ lib, stdenv, fetchFromGitHub, nodejs, pnpmConfigHook, pnpm_10, fetchPnpmDeps }:
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "feishin";
@@ -13,10 +13,11 @@ stdenv.mkDerivation (finalAttrs: {
 
   nativeBuildInputs = [
     nodejs
-    pnpm_10.configHook
+    pnpmConfigHook
+    pnpm_10
   ];
 
-  pnpmDeps = pnpm_10.fetchDeps {
+  pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs) pname version src;
     fetcherVersion = 2;
     hash = "sha256-9Ecbvr8yMX0fs7wf5UjVRq6kx/PjAYK1hwKHKf9kgys=";
