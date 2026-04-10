@@ -2,6 +2,7 @@
 , buildPythonPackage
 , fetchPypi
 , poetry-core
+, pythonRelaxDepsHook
 , click
 , protobuf
 , pycryptodome
@@ -23,6 +24,9 @@ buildPythonPackage rec {
   format = "pyproject";
   build-system = [ poetry-core ];
 
+  nativeBuildInputs = [
+    pythonRelaxDepsHook
+  ];
   propagatedBuildInputs = [
     click
     protobuf
@@ -31,6 +35,9 @@ buildPythonPackage rec {
     pyyaml
     requests
     unidecode
+  ];
+  pythonRelaxDeps = [
+    "protobuf"
   ];
 
   meta = with lib; {
