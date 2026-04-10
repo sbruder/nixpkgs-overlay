@@ -64,8 +64,6 @@ rec {
 
   nsz = callPythonPackage ./nsz { };
 
-  playgsf = callPackage ./playgsf { };
-
   pyplayready = callPythonPackage ./pyplayready { };
 
   rtl-wmbus = callPackage ./rtl-wmbus { };

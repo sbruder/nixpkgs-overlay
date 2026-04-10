@@ -71,7 +71,6 @@
             mdbook-svgbob
             netstick
             nsz
-            playgsf
             pyplayready
             rtl-wmbus
             sbom2doc
