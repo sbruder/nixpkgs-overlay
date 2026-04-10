@@ -33,8 +33,6 @@ rec {
 
   cups-sii-slp-400-600 = callPackage ./cups-sii-slp-400-600 { };
 
-  fSpy = callPackage ./fSpy { };
-
   face_morpher = callPythonPackage ./face_morpher { };
 
   feishin-web = callPackage ./feishin-web { };
