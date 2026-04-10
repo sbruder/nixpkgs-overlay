@@ -1,15 +1,15 @@
-{ lib, stdenv, fetchzip, makeWrapper, wrapGAppsHook, glib, jdk11 }:
+{ lib, stdenv, fetchzip, makeWrapper, wrapGAppsHook3, glib, jdk11 }:
 
 stdenv.mkDerivation rec {
   pname = "VisiCut";
-  version = "1.9-155-gb4085751";
+  version = "1.9-216";
 
   src = fetchzip {
-    url = "https://download.visicut.org/files/master/All/${pname}-${version}.zip";
-    sha256 = "sha256-vN537qrFmc3RG6e/ulm8AzVBNjmmmL/mmJUd5zhXpi4=";
+    url = "https://github.com/t-oster/${pname}/releases/download/${version}/VisiCut-${version}-g30b4dc81.zip";
+    sha256 = "sha256-PGYW7gO6dHw0XcsNQPCq2twAItEG89ME6V7BKz2VBxA=";
   };
 
-  nativeBuildInputs = [ makeWrapper wrapGAppsHook ];
+  nativeBuildInputs = [ makeWrapper wrapGAppsHook3 ];
   buildInputs = [ glib jdk11 ];
 
   dontWrapGApps = true;
