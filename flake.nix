@@ -70,6 +70,7 @@
             netstick
             nsz
             pyplayready
+            pywidevine
             rtl-wmbus
             sbom2doc
             sbomaudit

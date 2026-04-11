@@ -21,6 +21,10 @@ rec {
     pywidevine = callPythonPackage ./python-modules/pywidevine { };
   }));
 
+  # python modules that expose binaries
+  inherit (final.python3Packages)
+    pywidevine;
+
   afancontrol = callPythonPackage ./afancontrol { };
 
   cups-sii-slp-400-600 = callPackage ./cups-sii-slp-400-600 { };
