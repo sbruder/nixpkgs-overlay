@@ -1,0 +1,11 @@
+labels:
+  backend: local
+
+when:
+  - event: push
+
+steps:
+  - name: check
+    image: bash
+    commands:
+      - nix run .#check-all-packages
