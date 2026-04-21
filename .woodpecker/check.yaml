@@ -2,10 +2,31 @@ labels:
   backend: local
 
 when:
+  - event: manual
   - event: push
+  - event: cron
 
 steps:
-  - name: check
+  - name: check pinned
     image: bash
+    depends_on: []
     commands:
       - nix run .#check-all-packages
+
+  - name: check 25.11
+    image: bash
+    depends_on: []
+    commands:
+      - git reset flake.nix
+      - nix flake update --override-input nixpkgs github:nixos/nixpkgs/nixos-25.11 nixpkgs
+      - nix run .#check-all-packages
+    failure: ignore
+
+  - name: check unstable
+    image: bash
+    depends_on: []
+    commands:
+      - git reset flake.nix
+      - nix flake update --override-input nixpkgs github:nixos/nixpkgs/nixos-unstable nixpkgs
+      - nix run .#check-all-packages
+    failure: ignore
