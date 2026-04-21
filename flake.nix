@@ -91,9 +91,12 @@
           type = "app";
           program = toString (pkgs.writeShellScript "check-all-packages" ''
             set -euo pipefail
+            fail=0
+
             eval_result="$(${pkgs.nix-eval-jobs}/bin/nix-eval-jobs --flake .#packages.${system})"
             ${pkgs.jq}/bin/jq -s -r '.[] | select(has("drvPath")) | "${self}#\(.attr)"' <<< "$eval_result" | xargs nix build --no-link --keep-going || true
             ${pkgs.jq}/bin/jq -s -r '.[] | select(has("error")) | .attr' <<< "$eval_result" | while read drv; do
+              fail=1
               echo "❌ $drv (failed evaluation)" >&2
             done
             ${pkgs.jq}/bin/jq -s -r '.[] | select(has("drvPath")) | .attr + " " + .outputs.out' <<< "$eval_result" | while read drv; do
@@ -102,9 +105,11 @@
               if [ -e "$outPath" ]; then
                 echo "✅ $attr" >&2
               else
+                fail=1
                 echo "❌ $attr (failed build)" >&2
               fi
             done
+            exit "$fail"
           '');
         };
       };
