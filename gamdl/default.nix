@@ -7,11 +7,13 @@
 , colorama
 , dataclass-click
 , httpx
+, httpx-retries
 , inquirerpy
 , m3u8
 , mutagen
 , pillow
 , pywidevine
+, structlog
 , yt-dlp
 , bento4
 , ffmpeg
@@ -21,13 +23,13 @@
 
 buildPythonPackage rec {
   pname = "gamdl";
-  version = "2.9.3";
+  version = "3.2";
 
   src = fetchFromGitHub {
     owner = "glomatico";
     repo = pname;
     rev = version;
-    sha256 = "sha256-iu+ymNPKnKwYWwVNPHkJCYcoDuFZjxzGg0LsFCTJC7g=";
+    sha256 = "sha256-7Dt1aRBDB6hkztorH5FyN5IXoKlBXWTNyj1scKARgEs=";
   };
 
   pyproject = true;
@@ -39,11 +41,13 @@ buildPythonPackage rec {
     colorama
     dataclass-click
     httpx
+    httpx-retries
     inquirerpy
     m3u8
     mutagen
     pillow
     pywidevine
+    structlog
     yt-dlp
 
     # external dependencies
