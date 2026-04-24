@@ -10,6 +10,8 @@ rec {
 
     dataclass-click = callPythonPackage ./python-modules/dataclass-click { };
 
+    httpx-retries = callPythonPackage ./python-modules/httpx-retries { };
+
     netbox-inventory = callPythonPackage ./python-modules/netbox-inventory { };
 
     netbox-topology-views = callPythonPackage ./python-modules/netbox-topology-views { };
