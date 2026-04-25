@@ -52,6 +52,7 @@
           inherit (pkgs)
             VisiCut
             afancontrol
+            cap
             cups-sii-slp-400-600
             face_morpher
             feishin-web

@@ -1,0 +1,27 @@
+From 6e9589146bd7ca0c1292cf3cff04f1ad1fc49b44 Mon Sep 17 00:00:00 2001
+From: Simon Bruder <simon@sbruder.de>
+Date: Sat, 25 Apr 2026 02:12:31 +0200
+Subject: [PATCH 3/5] Use local wasm URL in widget
+
+---
+ widget/src/src/cap.js | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+
+diff --git a/widget/src/src/cap.js b/widget/src/src/cap.js
+index 46b4c0f..2a061f0 100644
+--- a/widget/src/src/cap.js
++++ b/widget/src/src/cap.js
+@@ -146,9 +146,7 @@
+   const getWasmModule = () => {
+     if (wasmModulePromise) return wasmModulePromise;
+ 
+-    const wasmUrl =
+-      window.CAP_CUSTOM_WASM_URL ||
+-      `https://cdn.jsdelivr.net/npm/@cap.js/wasm@${WASM_VERSION}/browser/cap_wasm_bg.wasm`;
++    const wasmUrl = import.meta.resolve("./cap_wasm_bg.wasm");
+ 
+     wasmModulePromise = fetch(wasmUrl)
+       .then((r) => {
+-- 
+2.51.2
+

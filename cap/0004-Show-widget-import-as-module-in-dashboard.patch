@@ -1,0 +1,25 @@
+From 94c04422ccd086360ed935f0bdc64ddf2de328b7 Mon Sep 17 00:00:00 2001
+From: Simon Bruder <simon@sbruder.de>
+Date: Sat, 25 Apr 2026 02:12:48 +0200
+Subject: [PATCH 4/5] Show widget import as module in dashboard
+
+---
+ standalone/public/js/dashboard.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/standalone/public/js/dashboard.js b/standalone/public/js/dashboard.js
+index 70adf50..c0f00d3 100644
+--- a/standalone/public/js/dashboard.js
++++ b/standalone/public/js/dashboard.js
+@@ -303,7 +303,7 @@ function renderIntegrationTab(key) {
+   const sk = key.siteKey;
+   const origin = location.origin;
+   const endpoint = `${origin}/${sk}/`;
+-  const widget = `<scr` + `ipt src="${origin}/assets/widget.js"></scr` + `ipt>
++  const widget = `<scr` + `ipt type="module" src="${origin}/assets/widget.js"></scr` + `ipt>
+ 
+ <cap-widget data-cap-api-endpoint="${endpoint}"></cap-widget>`;
+   const nodeSnippet = `const res = await fetch("${origin}/siteverify", {
+-- 
+2.51.2
+

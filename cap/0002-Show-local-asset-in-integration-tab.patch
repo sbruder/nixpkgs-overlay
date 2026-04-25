@@ -1,0 +1,26 @@
+From 64a0d520a80825271a2ad68119cae7d9dc87ab46 Mon Sep 17 00:00:00 2001
+From: Simon Bruder <simon@sbruder.de>
+Date: Sat, 25 Apr 2026 02:00:11 +0200
+Subject: [PATCH 2/5] Show local asset in integration tab
+
+---
+ standalone/public/js/dashboard.js | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/standalone/public/js/dashboard.js b/standalone/public/js/dashboard.js
+index ba10519..70adf50 100644
+--- a/standalone/public/js/dashboard.js
++++ b/standalone/public/js/dashboard.js
+@@ -303,8 +303,7 @@ function renderIntegrationTab(key) {
+   const sk = key.siteKey;
+   const origin = location.origin;
+   const endpoint = `${origin}/${sk}/`;
+-  const widget = `<scr` + `ipt src="https://cdn.jsdelivr.net/npm/@cap.js/widget"></scr` + `ipt>
+-<!-- pin a version in production, e.g. @cap.js/widget@3 -->
++  const widget = `<scr` + `ipt src="${origin}/assets/widget.js"></scr` + `ipt>
+ 
+ <cap-widget data-cap-api-endpoint="${endpoint}"></cap-widget>`;
+   const nodeSnippet = `const res = await fetch("${origin}/siteverify", {
+-- 
+2.51.2
+

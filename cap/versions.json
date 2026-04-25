@@ -1,0 +1,17 @@
+{
+  "standalone": {
+    "version": "3.0.5",
+    "srcHash": "sha256-fkcrdloXRG1kE1TOgmXTMx5/zvPn/Q8bnYH+ZZNc92s=",
+    "nodeModulesHash": "sha256-SpG8K29xRZ+DFBYp5T2JzcVvCe4m9L4BDsdBhZ32FGA="
+  },
+  "wasm": {
+    "version": "0.0.6",
+    "srcHash": "sha256-XxMDM6S1XdarlJDio9is6H5Qhm3CU1tpNBTKViYZrZo=",
+    "cargoHash": "sha256-Pgm8NVBUjn9HHhgja7XaawKTd6gUW6pewZcy2PqY43o="
+  },
+  "widget": {
+    "version": "0.1.45",
+    "srcHash": "sha256-VQ1dwaxNKWqclm37elydyRiovFjm0TW2HPzGsU8Fu9o=",
+    "nodeModulesHash": "sha256-1htJZtOEnZF01lbsD2d9mN/40B/6Ggy1XU+N9N0y/6c="
+  }
+}

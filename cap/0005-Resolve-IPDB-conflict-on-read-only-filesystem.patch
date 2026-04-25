@@ -1,0 +1,43 @@
+From d4a05c02b37323e979b7323159a824bdeef02f93 Mon Sep 17 00:00:00 2001
+From: Simon Bruder <simon@sbruder.de>
+Date: Sat, 25 Apr 2026 03:06:55 +0200
+Subject: [PATCH 5/5] Resolve IPDB conflict on read-only filesystem
+
+---
+ standalone/src/ipdb.js | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
+
+diff --git a/standalone/src/ipdb.js b/standalone/src/ipdb.js
+index 89c16ef..747a6fc 100644
+--- a/standalone/src/ipdb.js
++++ b/standalone/src/ipdb.js
+@@ -160,12 +160,24 @@ export async function downloadDB(mode, credentials) {
+ 
+       const decompressed = Bun.gunzipSync(compressed);
+ 
++      let writePromise;
++
+       if (file.isTarGz) {
+         const mmdb = extractMMDBFromTar(decompressed);
+         if (!mmdb) throw new Error(`No .mmdb file found in ${file.name} tar archive`);
+-        await Bun.write(file.path, mmdb);
++        writePromise = Bun.write(file.path, mmdb);
+       } else {
+-        await Bun.write(file.path, decompressed);
++        writePromise = Bun.write(file.path, decompressed);
++      }
++
++      try {
++        await writePromise;
++      } catch (error) {
++        if (error.code === "EROFS") {
++          console.log("Skipping writing of IPDB, as data dir is on a read-only filesystem");
++        } else {
++          throw error;
++        }
+       }
+     }
+ 
+-- 
+2.51.2
+

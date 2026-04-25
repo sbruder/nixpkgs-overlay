@@ -29,6 +29,10 @@ rec {
 
   afancontrol = callPythonPackage ./afancontrol { };
 
+  cap = callPackage ./cap/standalone.nix { };
+  cap-wasm = callPackage ./cap/wasm.nix { };
+  cap-widget = callPackage ./cap/widget.nix { };
+
   cups-sii-slp-400-600 = callPackage ./cups-sii-slp-400-600 { };
 
   face_morpher = callPythonPackage ./face_morpher { };
