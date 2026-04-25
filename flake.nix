@@ -20,6 +20,7 @@
         inherit (nixpkgs) lib;
       in
       {
+        cap.imports = lib.singleton ./cap/module.nix;
         hcloud_exporter.imports = lib.singleton ./hcloud_exporter/module.nix;
         komf.imports = lib.singleton ./komf/module.nix;
       };
