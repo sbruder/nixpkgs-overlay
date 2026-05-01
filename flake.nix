@@ -23,6 +23,7 @@
         cap.imports = lib.singleton ./cap/module.nix;
         hcloud_exporter.imports = lib.singleton ./hcloud_exporter/module.nix;
         komf.imports = lib.singleton ./komf/module.nix;
+        mcaptcha.imports = lib.singleton ./mcaptcha/module.nix;
       };
   } // flake-utils.lib.eachDefaultSystem (system:
     let
@@ -68,6 +69,8 @@
             linuxmotehook2
             liquidsfz
             luajson
+            mcaptcha
+            mcaptcha-cache
             mdbook-svgbob
             netstick
             nsz

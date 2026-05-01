@@ -60,6 +60,9 @@ rec {
 
   luajson = prev.luaPackages.callPackage ./luajson { };
 
+  mcaptcha = callPackage ./mcaptcha { };
+  mcaptcha-cache = callPackage ./mcaptcha/cache.nix { };
+
   mdbook-svgbob = callPackage ./mdbook-svgbob { };
 
   mpvScripts = prev.mpvScripts // {
