@@ -81,6 +81,7 @@
             sbom2doc
             sbomaudit
             textidote
+            tsmuxer
             unxwb
             wa-crypt-tools
             whisper_cpp

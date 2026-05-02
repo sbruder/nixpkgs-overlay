@@ -85,6 +85,8 @@ rec {
 
   textidote = callPackage ./textidote { };
 
+  tsmuxer = callPackage ./tsmuxer { };
+
   unxwb = callPackage ./unxwb { };
 
   VisiCut = callPackage ./VisiCut { };
