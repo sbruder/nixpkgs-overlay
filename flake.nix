@@ -56,6 +56,7 @@
             afancontrol
             cap
             cups-sii-slp-400-600
+            dgpulldown
             face_morpher
             feishin-web
             gamdl
