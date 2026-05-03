@@ -80,6 +80,7 @@
             rtl-wmbus
             sbom2doc
             sbomaudit
+            single-file-cli
             textidote
             tsmuxer
             unxwb
