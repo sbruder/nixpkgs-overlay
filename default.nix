@@ -29,6 +29,8 @@ rec {
 
   afancontrol = callPythonPackage ./afancontrol { };
 
+  aonsoku-web = callPackage ./aonsoku-web { };
+
   cap = callPackage ./cap/standalone.nix { };
   cap-wasm = callPackage ./cap/wasm.nix { };
   cap-widget = callPackage ./cap/widget.nix { };

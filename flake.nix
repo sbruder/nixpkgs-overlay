@@ -54,6 +54,7 @@
           inherit (pkgs)
             VisiCut
             afancontrol
+            aonsoku-web
             cap
             cups-sii-slp-400-600
             dgpulldown
