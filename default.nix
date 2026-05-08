@@ -92,6 +92,8 @@ rec {
 
   tsmuxer = callPackage ./tsmuxer { };
 
+  ttconv = callPythonPackage ./ttconv { };
+
   unxwb = callPackage ./unxwb { };
 
   VisiCut = callPackage ./VisiCut { };

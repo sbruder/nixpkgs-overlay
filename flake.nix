@@ -84,6 +84,7 @@
             single-file-cli
             textidote
             tsmuxer
+            ttconv
             unxwb
             wa-crypt-tools
             whisper_cpp
