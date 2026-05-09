@@ -23,14 +23,14 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "bpm-tools";
-  version = "0.4";
+  version = "0.4.1";
 
   src = fetchFromForgejo {
     domain = "git.sbruder.de";
     owner = "simon";
     repo = finalAttrs.pname;
     rev = finalAttrs.version;
-    hash = "sha256-5BxtlIGD/ocN1ovaA172v1vDe/v+FoZrryiNA3qMiSI=";
+    hash = "sha256-QGHzaH8FGDEauMudnyvhSREbQdbTzFNC1+eV5pZmX18=";
   };
 
   nativeBuildInputs = [
