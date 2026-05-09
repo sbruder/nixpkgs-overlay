@@ -31,6 +31,8 @@ rec {
 
   aonsoku-web = callPackage ./aonsoku-web { };
 
+  bpm-tools = callPackage ./bpm-tools { };
+
   cap = callPackage ./cap/standalone.nix { };
   cap-wasm = callPackage ./cap/wasm.nix { };
   cap-widget = callPackage ./cap/widget.nix { };

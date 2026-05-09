@@ -55,6 +55,7 @@
             VisiCut
             afancontrol
             aonsoku-web
+            bpm-tools
             cap
             cups-sii-slp-400-600
             dgpulldown
