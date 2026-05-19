@@ -1,36 +1,55 @@
 { lib
 , stdenv
-, fetchurl
+, fetchFromGitHub
+, gradle
 , makeWrapper
-, jdk17
+, writableTmpDirAsHomeHook
+, jdk17_headless
 }:
 let
-  jre = jdk17;
+  jdk = jdk17_headless;
 in
-stdenv.mkDerivation rec {
+stdenv.mkDerivation (finalAttrs: {
   pname = "komf";
   version = "1.7.1";
 
-  src = fetchurl {
-    url = "https://github.com/Snd-R/${pname}/releases/download/${version}/${pname}-${version}.jar";
-    hash = "sha256-reVCSNj4FlKILXSRuRw/m7uv/SjTXS0Ch1snrNWJBNE=";
+  src = fetchFromGitHub {
+    owner = "Snd-R";
+    repo = finalAttrs.pname;
+    rev = finalAttrs.version;
+    hash = "sha256-S89YRPJEgX0WEyROj/BOe97n+SdtZyMdOwyajUDcsVg=";
   };
 
   nativeBuildInputs = [
+    gradle
     makeWrapper
+    writableTmpDirAsHomeHook # required for android dependencies to not fail
   ];
 
-  buildCommand = ''
-    makeWrapper ${jre}/bin/java $out/bin/komf --add-flags "-jar $src"
+  mitmCache = gradle.fetchDeps {
+    inherit (finalAttrs) pname;
+    data = ./deps.json;
+  };
+
+  gradleFlags = [ "-Dorg.gradle.java.home=${jdk}" ];
+
+  gradleBuildTask = ":komf-app:shadowjar";
+  gradleUpdateTask = finalAttrs.gradleBuildTask; # required as nixDownloadDeps fails for (optional) android dependencies
+
+  installPhase = ''
+    runHook preInstall
+    install -Dm444 komf-app/build/libs/komf-app-*-all.jar $out/share/komf/komf-all.jar
+    makeWrapper ${jdk}/bin/java $out/bin/komf --add-flags "-jar $out/share/komf/komf-all.jar"
+    runHook postInstall
   '';
 
   meta = {
     description = "Komga and Kavita metadata fetcher";
     homepage = "https://github.com/Snd-R/komf";
     license = lib.licenses.mit;
-    platforms = jre.meta.platforms;
+    platforms = jdk.meta.platforms;
     maintainers = with lib.maintainers; [ sbruder ];
     mainProgram = "komf";
-    sourceProvenance = with lib.sourceTypes; [ binaryBytecode ];
+    sourceProvenance = with lib.sourceTypes; [ fromSource binaryBytecode ];
   };
-}
+})
