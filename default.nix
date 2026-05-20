@@ -12,6 +12,8 @@ rec {
 
     httpx-retries = callPythonPackage ./python-modules/httpx-retries { };
 
+    mpris-server = callPythonPackage ./python-modules/mpris-server { };
+
     netbox-inventory = callPythonPackage ./python-modules/netbox-inventory { };
 
     netbox-topology-views = callPythonPackage ./python-modules/netbox-topology-views { };
