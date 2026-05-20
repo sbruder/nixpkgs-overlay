@@ -60,8 +60,6 @@ rec {
   haproxy-lua-cors = callPackage ./haproxy-lua-cors { };
   haproxy-lua-http = callPackage ./haproxy-lua-http { };
 
-  hcloud_exporter = callPackage ./hcloud_exporter { };
-
   knst0-mdl = callPackage ./knst0-mdl { };
 
   komf = callPackage ./komf { };

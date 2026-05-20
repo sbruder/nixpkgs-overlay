@@ -25,7 +25,6 @@
       in
       {
         cap.imports = lib.singleton ./cap/module.nix;
-        hcloud_exporter.imports = lib.singleton ./hcloud_exporter/module.nix;
         komf.imports = lib.singleton ./komf/module.nix;
         mcaptcha.imports = lib.singleton ./mcaptcha/module.nix;
       };
@@ -72,7 +71,6 @@
             haproxy-auth-request
             haproxy-lua-cors
             haproxy-lua-http
-            hcloud_exporter
             knst0-mdl
             komf
             linuxmotehook2
