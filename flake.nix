@@ -86,7 +86,6 @@
             sbom2doc
             sbomaudit
             single-file-cli
-            textidote
             tsmuxer
             ttconv
             unxwb

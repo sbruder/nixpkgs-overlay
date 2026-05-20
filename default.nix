@@ -92,8 +92,6 @@ rec {
   # exists in nixpkgs, but old version
   single-file-cli = callPythonPackage ./single-file-cli { };
 
-  textidote = callPackage ./textidote { };
-
   tsmuxer = callPackage ./tsmuxer { };
 
   ttconv = callPythonPackage ./ttconv { };
