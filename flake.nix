@@ -90,7 +90,6 @@
             ttconv
             unxwb
             wa-crypt-tools
-            whisper_cpp
             wmbusmeters;
 
           mpvScripts = lib.recurseIntoAttrs {
