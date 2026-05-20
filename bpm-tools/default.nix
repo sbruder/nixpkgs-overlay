@@ -1,4 +1,10 @@
-# Adapted from upstream nixpkgs
+# SPDX-FileCopyrightText: 2019-2020 Doron Behar <doron.behar@gmail.com>
+# SPDX-FileCopyrightText: 2020 Fabian Geiselhart <me@f4814n.de>
+# SPDX-FileCopyrightText: 2020 Jan Tojnar <jtojnar@gmail.com>
+# SPDX-FileCopyrightText: 2026 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT
+
 { lib
 , stdenv
 , flac

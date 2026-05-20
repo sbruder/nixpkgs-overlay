@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2022 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 { lib, stdenv, fetchFromGitHub, meson, ninja, pkg-config, vala, glib, libgee, systemd }:
 
 stdenv.mkDerivation rec {

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025-2026 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 { lib, stdenv, fetchFromGitHub, rtl-sdr }:
 
 stdenv.mkDerivation rec {

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 { stdenv
 , lib
 , fetchzip

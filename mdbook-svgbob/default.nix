@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 Simon Bruder <simon@sbruder.de>
+# SPDX-FileCopyrightText: 2025 Xavier Ruiz <github@xav.ie>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 { lib, rustPlatform, fetchFromGitHub }:
 
 rustPlatform.buildRustPackage rec {

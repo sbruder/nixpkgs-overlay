@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2021, 2025-2026 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 { lib, fetchurl, runCommand, buildPythonPackage, fetchFromGitHub, setuptools, dlib, docopt, matplotlib, numpy, opencv4, scipy, model ? null }:
 let
   model' = if !isNull model then model else

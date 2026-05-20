@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 { lib, buildPythonPackage, fetchPypi, setuptools }:
 
 buildPythonPackage rec {

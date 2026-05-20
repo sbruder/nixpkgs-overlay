@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2021 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 { lib, stdenv, fetchzip, zlib }:
 
 stdenv.mkDerivation rec {

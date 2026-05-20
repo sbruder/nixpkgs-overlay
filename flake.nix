@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2021-2026 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 {
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
@@ -40,12 +44,14 @@
           src = ./.;
           hooks = {
             nixpkgs-fmt.enable = true;
+            reuse.enable = true;
           };
         };
       };
 
       devShell = pkgs.mkShell {
-        shellHook = checks.pre-commit-check.shellHook;
+        inherit (checks.pre-commit-check) shellHook;
+        buildInputs = checks.pre-commit-check.enabledPackages;
       };
 
       packages = lib.filterAttrs

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2023, 2025 Simon Bruder <simon@sbruder.de>
+#
+# SPDX-License-Identifier: MIT OR Apache-2.0
+
 { lib, stdenv, fetchFromGitHub, nodejs, pnpmConfigHook, pnpm_10, fetchPnpmDeps }:
 
 stdenv.mkDerivation (finalAttrs: {
