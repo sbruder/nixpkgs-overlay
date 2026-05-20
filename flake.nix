@@ -80,7 +80,6 @@
             mcaptcha-cache
             mdbook-svgbob
             netstick
-            nsz
             pyplayready
             pywidevine
             rtl-wmbus

@@ -81,8 +81,6 @@ rec {
 
   netstick = callPackage ./netstick { };
 
-  nsz = callPythonPackage ./nsz { };
-
   pyplayready = callPythonPackage ./pyplayready { };
 
   rtl-wmbus = callPackage ./rtl-wmbus { };
