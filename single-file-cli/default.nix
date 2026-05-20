@@ -15,7 +15,6 @@ stdenv.mkDerivation (finalAttrs: {
     hash = "sha256-VCdBUGyRCEX1pRt0akrs6kTvgAPx+dskECZ2DK451g8=";
   };
 
-  # does not get overridden automatically
   npmDeps = fetchNpmDeps {
     inherit (finalAttrs) src;
     hash = "sha256-9s0mjg0Fh3Tf7izHZeY47F2NMHKmOTvuWUilhn7tboA=";
