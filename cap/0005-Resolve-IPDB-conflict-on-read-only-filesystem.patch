@@ -1,4 +1,4 @@
-From d4a05c02b37323e979b7323159a824bdeef02f93 Mon Sep 17 00:00:00 2001
+From 272ca0440da6597d702dbdeb174142e0da575540 Mon Sep 17 00:00:00 2001
 From: Simon Bruder <simon@sbruder.de>
 Date: Sat, 25 Apr 2026 03:06:55 +0200
 Subject: [PATCH 5/5] Resolve IPDB conflict on read-only filesystem
@@ -8,10 +8,10 @@ Subject: [PATCH 5/5] Resolve IPDB conflict on read-only filesystem
  1 file changed, 14 insertions(+), 2 deletions(-)
 
 diff --git a/standalone/src/ipdb.js b/standalone/src/ipdb.js
-index 89c16ef..747a6fc 100644
+index 0172a14..fd1ec43 100644
 --- a/standalone/src/ipdb.js
 +++ b/standalone/src/ipdb.js
-@@ -160,12 +160,24 @@ export async function downloadDB(mode, credentials) {
+@@ -226,13 +226,25 @@ export async function downloadDB(mode, credentials) {
  
        const decompressed = Bun.gunzipSync(compressed);
  
@@ -19,7 +19,8 @@ index 89c16ef..747a6fc 100644
 +
        if (file.isTarGz) {
          const mmdb = extractMMDBFromTar(decompressed);
-         if (!mmdb) throw new Error(`No .mmdb file found in ${file.name} tar archive`);
+         if (!mmdb)
+           throw new Error(`No .mmdb file found in ${file.name} tar archive`);
 -        await Bun.write(file.path, mmdb);
 +        writePromise = Bun.write(file.path, mmdb);
        } else {

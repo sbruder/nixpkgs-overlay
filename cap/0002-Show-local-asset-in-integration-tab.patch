@@ -1,4 +1,4 @@
-From 64a0d520a80825271a2ad68119cae7d9dc87ab46 Mon Sep 17 00:00:00 2001
+From eb9434cacddb8afbbe38986cb45541c576a014db Mon Sep 17 00:00:00 2001
 From: Simon Bruder <simon@sbruder.de>
 Date: Sat, 25 Apr 2026 02:00:11 +0200
 Subject: [PATCH 2/5] Show local asset in integration tab
@@ -8,10 +8,10 @@ Subject: [PATCH 2/5] Show local asset in integration tab
  1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/standalone/public/js/dashboard.js b/standalone/public/js/dashboard.js
-index ba10519..70adf50 100644
+index 2cb2b51..d241d6c 100644
 --- a/standalone/public/js/dashboard.js
 +++ b/standalone/public/js/dashboard.js
-@@ -303,8 +303,7 @@ function renderIntegrationTab(key) {
+@@ -306,8 +306,7 @@ function renderIntegrationTab(key) {
    const sk = key.siteKey;
    const origin = location.origin;
    const endpoint = `${origin}/${sk}/`;

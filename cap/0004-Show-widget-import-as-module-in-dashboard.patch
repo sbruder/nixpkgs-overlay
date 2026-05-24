@@ -1,4 +1,4 @@
-From 94c04422ccd086360ed935f0bdc64ddf2de328b7 Mon Sep 17 00:00:00 2001
+From bf054b02eba3e38554e3b674752bc86b7766092f Mon Sep 17 00:00:00 2001
 From: Simon Bruder <simon@sbruder.de>
 Date: Sat, 25 Apr 2026 02:12:48 +0200
 Subject: [PATCH 4/5] Show widget import as module in dashboard
@@ -8,10 +8,10 @@ Subject: [PATCH 4/5] Show widget import as module in dashboard
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/standalone/public/js/dashboard.js b/standalone/public/js/dashboard.js
-index 70adf50..c0f00d3 100644
+index d241d6c..6a9f31f 100644
 --- a/standalone/public/js/dashboard.js
 +++ b/standalone/public/js/dashboard.js
-@@ -303,7 +303,7 @@ function renderIntegrationTab(key) {
+@@ -306,7 +306,7 @@ function renderIntegrationTab(key) {
    const sk = key.siteKey;
    const origin = location.origin;
    const endpoint = `${origin}/${sk}/`;
