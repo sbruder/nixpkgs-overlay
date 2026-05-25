@@ -27,13 +27,13 @@
 
 buildPythonPackage rec {
   pname = "gamdl";
-  version = "3.3";
+  version = "3.5.2";
 
   src = fetchFromGitHub {
     owner = "glomatico";
     repo = pname;
     rev = version;
-    sha256 = "sha256-FLyr+RSABQMObZ73OtplUQc30Lk4KTirMksQUvMze20=";
+    sha256 = "sha256-HHtEzV0EnpxC5e71pe67Ab9IxWDX69xyogk3qgfd1JY=";
   };
 
   pyproject = true;
