@@ -49,6 +49,8 @@ rec {
 
   face_morpher = callPythonPackage ./face_morpher { };
 
+  fedifetcher = callPythonPackage ./fedifetcher { };
+
   feishin-web = callPackage ./feishin-web { };
 
   gamdl = callPythonPackage ./gamdl { };

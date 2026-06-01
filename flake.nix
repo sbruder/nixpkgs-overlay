@@ -65,6 +65,7 @@
             cups-sii-slp-400-600
             dgpulldown
             face_morpher
+            fedifetcher
             feishin-web
             gamdl
             gust_tools
