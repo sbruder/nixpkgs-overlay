@@ -17,12 +17,12 @@ steps:
     commands:
       - nix run .#check-all-packages
 
-  - name: check 25.11
+  - name: check 26.05
     image: bash
     depends_on: []
     commands:
       - git reset flake.nix
-      - nix flake update --override-input nixpkgs github:nixos/nixpkgs/nixos-25.11 nixpkgs
+      - nix flake update --override-input nixpkgs github:nixos/nixpkgs/nixos-26.05 nixpkgs
       - nix run .#check-all-packages
     failure: ignore
 
