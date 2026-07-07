@@ -19,6 +19,8 @@ rustPlatform.buildRustPackage (finalAttrs: {
 
   patches = [
     ./0001-Print-JSON-data-on-single-line.patch
+    ./0002-Allow-passing-IMAP-password-as-file.patch
+    ./0003-Gracefully-handle-DMARC-parsing-error.patch
   ];
 
   nativeBuildInputs = [ pkg-config ];
