@@ -83,6 +83,8 @@ rec {
 
   netstick = callPackage ./netstick { };
 
+  network-journal = callPackage ./network-journal { };
+
   pyplayready = callPythonPackage ./pyplayready { };
 
   rtl-wmbus = callPackage ./rtl-wmbus { };

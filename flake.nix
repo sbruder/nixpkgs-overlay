@@ -27,6 +27,7 @@
         cap.imports = lib.singleton ./cap/module.nix;
         komf.imports = lib.singleton ./komf/module.nix;
         mcaptcha.imports = lib.singleton ./mcaptcha/module.nix;
+        network-journal.imports = lib.singleton ./network-journal/module.nix;
       };
   } // flake-utils.lib.eachDefaultSystem (system:
     let
@@ -81,6 +82,7 @@
             mcaptcha-cache
             mdbook-svgbob
             netstick
+            network-journal
             pyplayready
             pywidevine
             rtl-wmbus

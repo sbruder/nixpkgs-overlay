@@ -1,0 +1,27 @@
+From bd6c7a196a0efbf07c4d5edd9d6dca8ebad56b30 Mon Sep 17 00:00:00 2001
+From: Simon Bruder <simon@sbruder.de>
+Date: Tue, 7 Jul 2026 19:16:52 +0200
+Subject: [PATCH] Print JSON data on single line
+
+This makes parsing the output with common tools easier, as one line is
+always equal to one report.
+---
+ src/reports.rs | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/reports.rs b/src/reports.rs
+index dcc9e43..9748c72 100644
+--- a/src/reports.rs
++++ b/src/reports.rs
+@@ -149,7 +149,7 @@ pub fn handle_report(report: &ReportType<'_>, user_agent: Option<&str>, filter:
+             rpt_type_str = "TLS-Certificate-Validity";
+         }
+     }
+-    match serde_json::to_string_pretty(&decorated) {
++    match serde_json::to_string(&decorated) {
+         Ok(serialized_report) => {
+             info!("{} {}", rpt_type_str, serialized_report);
+             Ok(())
+-- 
+2.54.0
+
