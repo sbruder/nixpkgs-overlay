@@ -26,6 +26,15 @@ rustPlatform.buildRustPackage (finalAttrs: {
   nativeBuildInputs = [ pkg-config ];
   buildInputs = [ openssl ];
 
+  postPatch = ''
+    substituteInPlace src/processing/derivation.rs \
+      --replace-fail "/usr/share/network-journal/regexes.yaml" "$out/share/network-journal/regexes.yaml"
+  '';
+
+  postInstall = ''
+    install -Dm444 regexes.yaml "$out/share/network-journal/regexes.yaml"
+  '';
+
   checkFlags = [
     # require network connectivity
     "--skip=reports::tls_cert_validity::tests::check_expired"
