@@ -28,6 +28,7 @@
         komf.imports = lib.singleton ./komf/module.nix;
         mcaptcha.imports = lib.singleton ./mcaptcha/module.nix;
         network-journal.imports = lib.singleton ./network-journal/module.nix;
+        smtp-dane-verify.imports = lib.singleton ./smtp-dane-verify/module.nix;
       };
   } // flake-utils.lib.eachDefaultSystem (system:
     let
@@ -89,6 +90,7 @@
             sbom2doc
             sbomaudit
             single-file-cli
+            smtp-dane-verify
             tsmuxer
             ttconv
             unxwb

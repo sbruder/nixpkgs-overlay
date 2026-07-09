@@ -96,6 +96,8 @@ rec {
   # exists in nixpkgs, but old version
   single-file-cli = callPythonPackage ./single-file-cli { };
 
+  smtp-dane-verify = callPythonPackage ./smtp-dane-verify { };
+
   tsmuxer = callPackage ./tsmuxer { };
 
   ttconv = callPythonPackage ./ttconv { };
