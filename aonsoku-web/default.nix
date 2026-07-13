@@ -2,29 +2,30 @@
 #
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
-{ lib, stdenv, fetchFromGitHub, nodejs, pnpmConfigHook, pnpm_10, fetchPnpmDeps }:
+{ lib, stdenv, fetchFromGitHub, nodejs, pnpmConfigHook, pnpm_11, fetchPnpmDeps }:
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "aonsoku";
-  version = "0.14.0";
+  version = "0.15.0";
 
   src = fetchFromGitHub {
     owner = "victoralvesf";
     repo = finalAttrs.pname;
     rev = "v${finalAttrs.version}";
-    hash = "sha256-Rbte0qYcZQ70E6ib8rj0YsNP5SMNO8eC3MEvWcT7N08=";
+    hash = "sha256-zHYr50FBV7sSdNz6j07SdlMbVaXKj1SnJHmtjmsnBdY=";
   };
 
   nativeBuildInputs = [
     nodejs
     pnpmConfigHook
-    pnpm_10
+    pnpm_11
   ];
 
   pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs) pname version src;
+    pnpm = pnpm_11;
     fetcherVersion = 3;
-    hash = "sha256-3ymQef73DqXb4UjlEyhrtVxFM+4EIZGUK6bkADwOekk=";
+    hash = "sha256-Vu38fYEqdnNwj8chKh52iLUVDrM+dTTnepiNgvp3dAA=";
   };
 
   buildPhase = ''
