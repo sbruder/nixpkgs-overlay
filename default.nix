@@ -37,6 +37,8 @@ rec {
 
   aonsoku-web = callPackage ./aonsoku-web { };
 
+  apple-music-downloader = callPackage ./apple-music-downloader { };
+
   bpm-tools = callPackage ./bpm-tools { };
 
   cap = callPackage ./cap/standalone.nix { };

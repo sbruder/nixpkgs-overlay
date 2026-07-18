@@ -62,6 +62,7 @@
             VisiCut
             afancontrol
             aonsoku-web
+            apple-music-downloader
             bpm-tools
             cap
             cups-sii-slp-400-600
