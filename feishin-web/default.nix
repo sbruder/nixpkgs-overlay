@@ -6,13 +6,13 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "feishin";
-  version = "1.14.0";
+  version = "1.15.0";
 
   src = fetchFromGitHub {
     owner = "jeffvli";
     repo = finalAttrs.pname;
     rev = "v${finalAttrs.version}";
-    hash = "sha256-r9YomRp17yJW2yMCRa4Mq8RauRmnLQtMNo3q/AW24FA=";
+    hash = "sha256-Lu1vxZg8n+3zkvvJxyD/yw6RIfv1DHCuMdlSPxSc4cE=";
   };
 
   nativeBuildInputs = [
@@ -25,7 +25,7 @@ stdenv.mkDerivation (finalAttrs: {
     inherit (finalAttrs) pname version src;
     pnpm = pnpm_11;
     fetcherVersion = 3;
-    hash = "sha256-9y47Fa6MtbtTAOQCfYEYkga2H71LnUGZ2gC+Q+3w6Z0=";
+    hash = "sha256-Xjf+zRu1ZMf5zlJJP+TSYkVKxthQG31VGX5+jw8QOIY=";
   };
 
   buildPhase = ''
