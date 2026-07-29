@@ -55,8 +55,6 @@ rec {
 
   feishin-web = callPackage ./feishin-web { };
 
-  gamdl = callPythonPackage ./gamdl { };
-
   gust_tools = callPackage ./gust_tools { };
 
   haproxy-auth-request = callPackage ./haproxy-auth-request { };

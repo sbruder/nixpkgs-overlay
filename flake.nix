@@ -70,7 +70,6 @@
             face_morpher
             fedifetcher
             feishin-web
-            gamdl
             gust_tools
             haproxy-auth-request
             haproxy-lua-cors
