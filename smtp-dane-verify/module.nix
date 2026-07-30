@@ -58,6 +58,7 @@ in
     systemd.services.smtp-dane-verify = {
       wantedBy = [ "multi-user.target" ];
       after = [ "network-online.target" ];
+      wants = [ "network-online.target" ];
 
       environment = {
         APIKEY = cfg.apiKey;
