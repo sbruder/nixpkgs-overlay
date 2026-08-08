@@ -86,6 +86,7 @@
             network-journal
             pyplayready
             pywidevine
+            rlm_kanidm
             rtl-wmbus
             sbom2doc
             sbomaudit

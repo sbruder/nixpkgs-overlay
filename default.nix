@@ -87,6 +87,10 @@ rec {
 
   pyplayready = callPythonPackage ./pyplayready { };
 
+  rlm_kanidm = callPackage ./rlm_kanidm {
+    kanidm = prev.kanidm_1_11;
+  };
+
   rtl-wmbus = callPackage ./rtl-wmbus { };
 
   sbomaudit = callPythonPackage ./sbomaudit { };
