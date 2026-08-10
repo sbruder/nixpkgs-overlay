@@ -66,6 +66,8 @@ rec {
 
   komf = callPackage ./komf { };
 
+  komga = callPackage ./komga { };
+
   linuxmotehook2 = callPackage ./linuxmotehook2 { };
 
   liquidsfz = callPackage ./liquidsfz { };

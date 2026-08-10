@@ -76,6 +76,7 @@
             haproxy-lua-http
             knst0-mdl
             komf
+            komga
             linuxmotehook2
             liquidsfz
             luajson
