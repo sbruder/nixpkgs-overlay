@@ -26,6 +26,7 @@ let
     repo = pname;
     rev = version;
     leaveDotGit = true;
+    branchName = "master"; # displayed in UI, so it should not be `fetchgit`
     hash = "sha256-Q4o8RCvio0ELZwLMW45aSRNhuOaFcfTQBTjwl8g9Pvo=";
   };
 
