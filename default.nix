@@ -39,6 +39,8 @@ rec {
 
   apple-music-downloader = callPackage ./apple-music-downloader { };
 
+  audiobookshelf = callPackage ./audiobookshelf { };
+
   bpm-tools = callPackage ./bpm-tools { };
 
   cap = callPackage ./cap/standalone.nix { };

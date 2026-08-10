@@ -24,6 +24,7 @@
         inherit (nixpkgs) lib;
       in
       {
+        audiobookshelf.imports = lib.singleton ./audiobookshelf/module.nix;
         cap.imports = lib.singleton ./cap/module.nix;
         komf.imports = lib.singleton ./komf/module.nix;
         mcaptcha.imports = lib.singleton ./mcaptcha/module.nix;
@@ -63,6 +64,7 @@
             afancontrol
             aonsoku-web
             apple-music-downloader
+            audiobookshelf
             bpm-tools
             cap
             cups-sii-slp-400-600
