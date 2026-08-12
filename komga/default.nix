@@ -19,7 +19,7 @@ let
   jdk = jdk25_headless;
 
   pname = "komga";
-  version = "1.26.1";
+  version = "1.26.3";
 
   src = fetchFromGitHub {
     owner = "gotson";
@@ -27,7 +27,7 @@ let
     rev = version;
     leaveDotGit = true;
     branchName = "master"; # displayed in UI, so it should not be `fetchgit`
-    hash = "sha256-Q4o8RCvio0ELZwLMW45aSRNhuOaFcfTQBTjwl8g9Pvo=";
+    hash = "sha256-2rAbC8pQ1XUNYTGr+JC8Y5gU3T8IV7i034tAVPxOzLs=";
   };
 
   webui = stdenv.mkDerivation (finalAttrs: {
@@ -39,7 +39,7 @@ let
     npmDeps = fetchNpmDeps {
       inherit src;
       inherit (finalAttrs) sourceRoot;
-      hash = "sha256-B9GS4yY2Abz7WgiaPlHjUNUF1zER5RjHmTA4aizAG9k=";
+      hash = "sha256-WllmbyrFc04ipHuJJDjv2BdlrKfx1JrXxLRKoquVnd8=";
     };
 
     nativeBuildInputs = [
@@ -68,7 +68,7 @@ let
     npmDeps = fetchNpmDeps {
       inherit src;
       inherit (finalAttrs) sourceRoot;
-      hash = "sha256-2iEz+VFwqc///wcpo3eOxqUcefwrWk+z9tINTyyn3Qk=";
+      hash = "sha256-ZnU9LgJI6/96/d7kZnLn+CO06TQ8THDmP7+KCQoBh0c=";
     };
 
     nativeBuildInputs = [
