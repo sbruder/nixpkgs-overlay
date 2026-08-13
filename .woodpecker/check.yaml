@@ -10,22 +10,28 @@ when:
   - event: push
   - event: cron
 
+variables:
+  environment: &environment
+    XDG_CONFIG_HOME: $PWD/.config
+
 steps:
   - name: setup attic
     image: bash
+    environment: *environment
     commands:
-      - export XDG_CONFIG_HOME=$PWD/.config
       - attic login hiroshi https://nix-cache.sbruder.de/ "$ATTIC_TOKEN"
 
   - name: check pinned
     image: bash
     depends_on: [setup attic]
+    environment: *environment
     commands:
       - nix run .#check-all-packages | attic push ci --stdin
 
   - name: check 26.05
     image: bash
     depends_on: [setup attic]
+    environment: *environment
     commands:
       - nix run .#check-all-packages -- --override-input nixpkgs github:nixos/nixpkgs/nixos-26.05 | attic push ci --stdin
     failure: ignore
@@ -33,6 +39,7 @@ steps:
   - name: check unstable
     image: bash
     depends_on: [setup attic]
+    environment: *environment
     commands:
       - nix run .#check-all-packages -- --override-input nixpkgs github:nixos/nixpkgs/nixos-unstable | attic push ci --stdin
     failure: ignore
