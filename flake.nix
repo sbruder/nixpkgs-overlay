@@ -115,7 +115,7 @@
             fail=0
 
             eval_result="$(${pkgs.nix-eval-jobs}/bin/nix-eval-jobs "$@" --flake ${self}#packages.${system})"
-            ${pkgs.jq}/bin/jq -s -r '.[] | select(has("drvPath")) | "${self}#\(.attr)"' <<< "$eval_result" | xargs nix build "$@" --no-link --keep-going || true
+            ${pkgs.jq}/bin/jq -s -r '.[] | select(has("drvPath")) | .drvPath' <<< "$eval_result" | xargs nix-build --no-out-link --keep-going || true
             ${pkgs.jq}/bin/jq -s -r '.[] | select(has("error")) | .attr' <<< "$eval_result" | while read drv; do
               fail=1
               echo "❌ $drv (failed evaluation)" >&2

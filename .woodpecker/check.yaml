@@ -11,22 +11,28 @@ when:
   - event: cron
 
 steps:
+  - name: setup attic
+    image: bash
+    commands:
+      - export XDG_CONFIG_HOME=$PWD/.config
+      - attic login hiroshi https://nix-cache.sbruder.de/ "$ATTIC_TOKEN"
+
   - name: check pinned
     image: bash
-    depends_on: []
+    depends_on: [setup attic]
     commands:
-      - nix run .#check-all-packages
+      - nix run .#check-all-packages | attic push ci --stdin
 
   - name: check 26.05
     image: bash
-    depends_on: []
+    depends_on: [setup attic]
     commands:
-      - nix run .#check-all-packages -- --override-input nixpkgs github:nixos/nixpkgs/nixos-26.05
+      - nix run .#check-all-packages -- --override-input nixpkgs github:nixos/nixpkgs/nixos-26.05 | attic push ci --stdin
     failure: ignore
 
   - name: check unstable
     image: bash
-    depends_on: []
+    depends_on: [setup attic]
     commands:
-      - nix run .#check-all-packages -- --override-input nixpkgs github:nixos/nixpkgs/nixos-unstable
+      - nix run .#check-all-packages -- --override-input nixpkgs github:nixos/nixpkgs/nixos-unstable | attic push ci --stdin
     failure: ignore
