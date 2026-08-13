@@ -131,7 +131,7 @@ stdenv.mkDerivation {
 
   gradleFlags = [ "-Dorg.gradle.java.home=${jdk}" ];
 
-  gradleBuildTask = "webuiCopyIndex :komga:nextuiCopyIndex :komga:bootJar";
+  gradleBuildTask = ":komga:webuiCopyIndex :komga:nextuiCopyIndex :komga:bootJar";
 
   postBuild = ''
     # see postFetch in src
