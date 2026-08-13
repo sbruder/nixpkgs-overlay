@@ -32,6 +32,8 @@ steps:
     image: bash
     environment:
       XDG_CONFIG_HOME: $PWD/.config
+      ATTIC_TOKEN:
+        from_secret: attic_token
     commands:
       - attic login hiroshi https://nix-cache.sbruder.de/ "$ATTIC_TOKEN"
       - attic push ci --stdin < out_paths
