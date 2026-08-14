@@ -28,7 +28,7 @@ steps:
       - nix run .#check-all-packages -- --override-input nixpkgs github:nixos/nixpkgs/nixos-unstable >> out_paths
     failure: ignore
 
-  - name: setup attic
+  - name: push
     image: bash
     environment:
       XDG_CONFIG_HOME: $PWD/.config
