@@ -1,0 +1,70 @@
+From fa2d2980a395daf757d7716f1afa62a8a8c16e9a Mon Sep 17 00:00:00 2001
+From: Simon Bruder <simon@sbruder.de>
+Date: Sun, 16 Aug 2026 13:13:48 +0200
+Subject: [PATCH] fix(webui): do not open popup for oauth2 login
+
+This enables using OAuth2 providers that use security hardening,
+specifically the cross-origin-opener-policy HTTP response header.
+---
+ komga-webui/src/router.ts           | 15 ---------------
+ komga-webui/src/views/LoginView.vue | 18 +-----------------
+ 2 files changed, 1 insertion(+), 32 deletions(-)
+
+diff --git a/komga-webui/src/router.ts b/komga-webui/src/router.ts
+index 2666410d..4d1a6bbe 100644
+--- a/komga-webui/src/router.ts
++++ b/komga-webui/src/router.ts
+@@ -316,21 +316,6 @@ router.beforeEach((to, from, next) => {
+     document.title = 'Komga'
+   }
+ 
+-  if (window.opener !== null &&
+-    window.name === 'oauth2Login' &&
+-    to.query.server_redirect === 'Y'
+-  ) {
+-    if (!to.query.error) {
+-      // authentication succeeded, we redirect the parent window so that it can login via cookie
+-      window.opener.location.href = urls.origin
+-    } else {
+-      // authentication failed, we cascade the error message to the parent
+-      window.opener.location.href = window.location
+-    }
+-    // we can close the popup
+-    window.close()
+-  }
+-
+   if (to.name !== 'startup' && to.name !== 'login' && !lStore.getters.authenticated) {
+     const query = Object.assign({}, to.query, {redirect: to.fullPath})
+     next({name: 'startup', query: query})
+diff --git a/komga-webui/src/views/LoginView.vue b/komga-webui/src/views/LoginView.vue
+index 43585d6a..278503aa 100644
+--- a/komga-webui/src/views/LoginView.vue
++++ b/komga-webui/src/views/LoginView.vue
+@@ -257,23 +257,7 @@ export default Vue.extend({
+   },
+   methods: {
+     oauth2Login(provider: OAuth2ClientDto) {
+-      const url = `${urls.originNoSlash}/oauth2/authorization/${provider.registrationId}`
+-      const height = 600
+-      const width = 600
+-      const y = window.top!.outerHeight / 2 + window.top!.screenY - (height / 2)
+-      const x = window.top!.outerWidth / 2 + window.top!.screenX - (width / 2)
+-      window.open(url, 'oauth2Login',
+-        `toolbar=no,
+-        location=off,
+-        status=no,
+-        menubar=no,
+-        scrollbars=yes,
+-        resizable=yes,
+-        top=${y},
+-        left=${x},
+-        width=${height},
+-        height=${width}`,
+-      )
++      location = `${urls.originNoSlash}/oauth2/authorization/${provider.registrationId}`
+     },
+     getErrors(fieldName: string): string[] {
+       const errors = [] as string[]
+-- 
+2.54.0
+

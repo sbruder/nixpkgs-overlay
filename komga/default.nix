@@ -49,6 +49,11 @@ let
     pname = "${pname}-webui";
     inherit version src;
 
+    patches = [
+      ./0001-fix-webui-do-not-open-popup-for-oauth2-login.patch
+    ];
+    patchFlags = [ "-p2" ];
+
     sourceRoot = "source/komga-webui";
 
     npmDeps = fetchNpmDeps {
