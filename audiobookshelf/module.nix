@@ -13,6 +13,11 @@ in
     services.audiobookshelf = {
       enable = lib.mkEnableOption "Audiobookshelf";
       package = lib.mkPackageOption pkgs "audiobookshelf" { };
+      dynamicUser = lib.mkOption {
+        type = lib.types.bool;
+        default = true;
+        description = "Whether the systemd service runs with DynamicUser=yes. Otherwise, a user/group audiobookshelf will be created.";
+      };
       environment = lib.mkOption {
         type = lib.types.submodule {
           freeformType = lib.types.attrsOf lib.types.str;
@@ -43,7 +48,9 @@ in
 
       serviceConfig = {
         ExecStart = "${lib.getExe cfg.package}";
-        DynamicUser = true;
+        DynamicUser = cfg.dynamicUser;
+        User = "audiobookshelf";
+        Group = "audiobookshelf";
         StateDirectory = "audiobookshelf";
         WorkingDirectory = "%S/audiobookshelf";
 
@@ -73,6 +80,14 @@ in
         SystemCallArchitectures = "native";
         SystemCallFilter = [ "@system-service" "~@resources" "~@privileged" "@chown" ];
       };
+    };
+
+    users = lib.mkIf (!cfg.dynamicUser) {
+      users.audiobookshelf = {
+        isSystemUser = true;
+        group = "audiobookshelf";
+      };
+      groups.audiobookshelf = { };
     };
   };
 }
