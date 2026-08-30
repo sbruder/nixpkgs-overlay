@@ -25,7 +25,6 @@
       in
       {
         audiobookshelf.imports = lib.singleton ./audiobookshelf/module.nix;
-        cap.imports = lib.singleton ./cap/module.nix;
         certmagic-s3-exporter.imports = lib.singleton ./certmagic-s3-exporter/module.nix;
         komf.imports = lib.singleton ./komf/module.nix;
         mcaptcha.imports = lib.singleton ./mcaptcha/module.nix;
@@ -67,7 +66,6 @@
             apple-music-downloader
             audiobookshelf
             bpm-tools
-            cap
             certmagic-s3-exporter
             cups-sii-slp-400-600
             dgpulldown

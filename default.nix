@@ -43,10 +43,6 @@ rec {
 
   bpm-tools = callPackage ./bpm-tools { };
 
-  cap = callPackage ./cap/standalone.nix { };
-  cap-wasm = callPackage ./cap/wasm.nix { };
-  cap-widget = callPackage ./cap/widget.nix { };
-
   certmagic-s3-exporter = callPackage ./certmagic-s3-exporter { };
 
   cups-sii-slp-400-600 = callPackage ./cups-sii-slp-400-600 { };
