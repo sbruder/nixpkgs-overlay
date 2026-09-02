@@ -39,7 +39,8 @@ in
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
       serviceConfig = {
-        ExecStart = "${cfg.package}/bin/komf ${configFile}";
+        ExecStart = "${cfg.package}/bin/komf";
+        ExecStartPre = "${lib.getExe' pkgs.coreutils "ln"} -sf ${configFile} %S/komf/application.yml";
         Restart = "always";
 
         StateDirectory = "komf";
