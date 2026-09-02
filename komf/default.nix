@@ -32,6 +32,8 @@ stdenv.mkDerivation (finalAttrs: {
 
   mitmCache = gradle_9.fetchDeps {
     inherit (finalAttrs) pname;
+    # merged so it builds under both 26.05 and unstable
+    # jq --indent 1 -s '.[0] * .[1]' deps.json deps-stable.json > deps-merged.json
     data = ./deps.json;
   };
 
