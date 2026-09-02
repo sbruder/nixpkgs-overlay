@@ -5,7 +5,7 @@
 { lib
 , stdenv
 , fetchFromGitHub
-, gradle
+, gradle_9
 , makeWrapper
 , writableTmpDirAsHomeHook
 , jdk17_headless
@@ -15,22 +15,22 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "komf";
-  version = "1.7.1";
+  version = "2.0.1";
 
   src = fetchFromGitHub {
     owner = "Snd-R";
     repo = finalAttrs.pname;
     rev = finalAttrs.version;
-    hash = "sha256-S89YRPJEgX0WEyROj/BOe97n+SdtZyMdOwyajUDcsVg=";
+    hash = "sha256-W9DK8iT/gJu8j1Q7imxRggKLWQBSIzFA4rgyt9CN1To=";
   };
 
   nativeBuildInputs = [
-    gradle
+    gradle_9
     makeWrapper
     writableTmpDirAsHomeHook # required for android dependencies to not fail
   ];
 
-  mitmCache = gradle.fetchDeps {
+  mitmCache = gradle_9.fetchDeps {
     inherit (finalAttrs) pname;
     data = ./deps.json;
   };
