@@ -114,5 +114,7 @@ rec {
 
   wa-crypt-tools = callPythonPackage ./wa-crypt-tools { };
 
+  wkd-exporter = callPackage ./wkd-exporter { };
+
   wmbusmeters = callPackage ./wmbusmeters { };
 }

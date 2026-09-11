@@ -99,6 +99,7 @@
             ttconv
             unxwb
             wa-crypt-tools
+            wkd-exporter
             wmbusmeters;
 
           mpvScripts = lib.recurseIntoAttrs {
