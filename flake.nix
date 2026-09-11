@@ -10,13 +10,9 @@
 
     nix-pre-commit-hooks.url = "github:cachix/pre-commit-hooks.nix/master";
     nix-pre-commit-hooks.inputs.nixpkgs.follows = "nixpkgs";
-
-    poetry2nix.url = "github:nix-community/poetry2nix";
-    poetry2nix.inputs.flake-utils.follows = "flake-utils";
-    poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, flake-utils, nixpkgs, nix-pre-commit-hooks, poetry2nix }: {
+  outputs = { self, flake-utils, nixpkgs, nix-pre-commit-hooks }: {
     overlays.default = import ./default.nix;
 
     nixosModules =
@@ -35,7 +31,7 @@
     let
       pkgs = import nixpkgs {
         inherit system;
-        overlays = [ self.overlays.default poetry2nix.overlays.default ];
+        overlays = [ self.overlays.default ];
         config.allowUnfree = true;
       };
       lib = pkgs.lib;
