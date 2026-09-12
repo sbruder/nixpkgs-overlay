@@ -68,6 +68,7 @@
             face_morpher
             fedifetcher
             feishin-web
+            gandhi-fonts
             gust_tools
             haproxy-auth-request
             haproxy-lua-cors

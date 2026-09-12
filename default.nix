@@ -55,6 +55,8 @@ rec {
 
   feishin-web = callPackage ./feishin-web { };
 
+  gandhi-fonts = callPackage ./gandhi-fonts { };
+
   gust_tools = callPackage ./gust_tools { };
 
   haproxy-auth-request = callPackage ./haproxy-auth-request { };
