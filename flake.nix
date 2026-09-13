@@ -73,6 +73,7 @@
             haproxy-auth-request
             haproxy-lua-cors
             haproxy-lua-http
+            jellium-desktop
             knst0-mdl
             komf
             komga

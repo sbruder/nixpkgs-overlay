@@ -64,6 +64,8 @@ rec {
   haproxy-lua-cors = callPackage ./haproxy-lua-cors { };
   haproxy-lua-http = callPackage ./haproxy-lua-http { };
 
+  jellium-desktop = callPackage ./jellium-desktop { };
+
   knst0-mdl = callPackage ./knst0-mdl { };
 
   komf = callPackage ./komf { };
