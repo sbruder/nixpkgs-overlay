@@ -20,13 +20,13 @@ let
   jdk = jdk25_headless;
 
   pname = "komga";
-  version = "1.27.0";
+  version = "1.27.1";
 
   src = fetchFromGitHub {
     owner = "gotson";
     repo = pname;
     rev = version;
-    hash = "sha256-FBkt7Cn60c46eKZiQFpnhoVhEQLevcmLdjfS3Yaaguo=";
+    hash = "sha256-+iAFB/QqLg0xpAeBB+wAzBw59j50AzWXkNDhOBdjMxo=";
     leaveDotGit = true;
     postFetch = ''
       set -euo pipefail

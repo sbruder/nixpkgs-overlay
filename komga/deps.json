@@ -339,14 +339,6 @@
    "jar": "sha256-TA/aKx0xd1DX6jJONscLK8SDEMCqrme5jfCRXWltcRE=",
    "pom": "sha256-lyWx/pxoENl3dQu4RBXqEILEtIjUqDn5cEu09ej8F/Q="
   },
-  "com/gorylenko/gradle-git-properties#com.gorylenko.gradle-git-properties.gradle.plugin/4.0.1": {
-   "pom": "sha256-dUJSxXO7BhZhM6WCPR79E0pCptSr1Ue2MRbei5lRX6A="
-  },
-  "com/gorylenko/gradle-git-properties#gradle-git-properties/4.0.1": {
-   "jar": "sha256-q/FjqX8s2o+bkgVWBtmdNSBXcK8Jkv8r2iJJBmnkOdk=",
-   "module": "sha256-odP1Wo5FZ29u3RbZV+PJZhFwMbBowcX6bVoOjgYFj/E=",
-   "pom": "sha256-g3hMiCuNZ54y7T9KjrFNLyxQWYBKd0oCKqOICrWJE1Q="
-  },
   "com/hierynomus#asn-one/0.6.0": {
    "jar": "sha256-5PcP2ShJtSJABIuOus4MmhfTu3uciCs8d3jOw0WElfU=",
    "module": "sha256-kTF65Trklkji5iC7kCU8wz8Y+aKpbzxUHmY8XyIYDC4=",
