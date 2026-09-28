@@ -15,13 +15,13 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "komf";
-  version = "2.0.1";
+  version = "2.1.0";
 
   src = fetchFromGitHub {
     owner = "Snd-R";
     repo = finalAttrs.pname;
     rev = finalAttrs.version;
-    hash = "sha256-W9DK8iT/gJu8j1Q7imxRggKLWQBSIzFA4rgyt9CN1To=";
+    hash = "sha256-1RmgZkFgcieeLPuYelzvIMfijQXZju2he+ZRSuoGynQ=";
   };
 
   nativeBuildInputs = [
