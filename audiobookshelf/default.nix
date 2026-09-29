@@ -7,23 +7,24 @@
 , stdenv
 , fetchFromGitHub
 , fetchNpmDeps
-, nodejs_22
+, nodejs_24
 , npmHooks
+, typescript
 , ffmpeg
 , nunicode
 , routerBasePath ? ""
 }:
 let
-  nodejs = nodejs_22;
+  nodejs = nodejs_24;
 
   pname = "audiobookshelf";
-  version = "2.36.1";
+  version = "2.37.0";
 
   src = fetchFromGitHub {
     owner = "advplyr";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-HBaTTfZEbhR2n/XafScZB/gX29erTQHZ+IdErwhA11A=";
+    hash = "sha256-zo9xByg1QMdqfy161rnmfJ0Mt5CJvKbZIMijj2kQpQM=";
   };
 
   client = stdenv.mkDerivation (finalAttrs: {
@@ -35,7 +36,7 @@ let
     npmDeps = fetchNpmDeps {
       inherit src;
       inherit (finalAttrs) sourceRoot;
-      hash = "sha256-g3Y/4UU2YH/CeU8Z/NNkLP0OTeBM+4/rQfL406uVdio=";
+      hash = "sha256-l7vdcggcVs9LYQ7DLumUUh67lxZ5giVMrtwUU6prfwI=";
     };
 
     nativeBuildInputs = [
@@ -61,10 +62,14 @@ in
 buildNpmPackage {
   inherit pname version src nodejs;
 
-  npmDepsHash = "sha256-kp0LbSKaHTBppeyfLAFrGYnSWS3V2trO5yaZWoxVPo8=";
+  nativeBuildInputs = [
+    typescript
+  ];
 
-  dontNpmBuild = true;
+  npmDepsHash = "sha256-S9RGAc5ge+ULtRMbiY1ZOaxY5Ra2ltZdCHcGbkhUxzs=";
+
   npmInstallFlags = [ "--only=production" ];
+  npmBuildScript = "build:server";
 
   makeWrapperArgs = lib.mapAttrsToList (k: v: "--set ${k} ${lib.escapeShellArg v}") {
     NODE_ENV = "production";
