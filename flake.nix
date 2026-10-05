@@ -119,9 +119,7 @@
               fail=1
               echo "❌ $drv (failed evaluation)" >&2
             done
-            ${pkgs.jq}/bin/jq -s -r '.[] | select(has("drvPath")) | .attr + " " + .outputs.out' <<< "$eval_result" | while read drv; do
-              attr="$(cut -d" " -f1 <<< "$drv")"
-              outPath="$(cut -d" " -f2 <<< "$drv")"
+            ${pkgs.jq}/bin/jq -s -r '.[] | select(has("drvPath")) | .attr + " " + .outputs.out' <<< "$eval_result" | while read attr outPath; do
               if [ -e "$outPath" ]; then
                 echo "✅ $attr" >&2
               else
