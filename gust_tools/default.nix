@@ -6,19 +6,19 @@
 
 stdenv.mkDerivation rec {
   pname = "gust_tools";
-  version = "1.37";
+  version = "1.58";
 
   src = fetchFromGitHub {
     owner = "VitaSmith";
     repo = pname;
     rev = "v${version}";
-    sha256 = "sha256-/Uq+NaAAKbiEAxFnB0UJkhdsGKa6uQBnH9AmAlpi30s=";
+    sha256 = "sha256-kH/YVS/ArvwNE21uYzoaZh+WY5fD+6xHeTl9SSM2B1E=";
   };
 
   patches = [
     (fetchpatch {
-      url = "https://github.com/VitaSmith/gust_tools/commit/b564b54b1825e15bc743450605d8dae0a7366d1e.patch";
-      sha256 = "sha256-geTqFT89U2JRJwKduqkRbO0DlOvKxqqquvVVVIu2IB8=";
+      url = "https://github.com/VitaSmith/gust_tools/commit/1532f65aeba4e64774547bd552933185b34d23a0.patch";
+      sha256 = "sha256-ck7R6iHafFjCOT6hiR85ta/CgA3Xxj6wrXpSrqByR9o=";
     })
   ];
 
