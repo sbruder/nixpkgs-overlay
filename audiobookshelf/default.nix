@@ -62,6 +62,13 @@ in
 buildNpmPackage {
   inherit pname version src nodejs;
 
+  postPatch = ''
+    # Ensure compatibility with recent typescript versions (see https://github.com/microsoft/TypeScript/issues/62200)
+    substituteInPlace tsconfig.server.json \
+      --replace-fail '"module": "commonjs"' '"module": "nodenext"' \
+      --replace-fail '"moduleResolution": "node"' '"moduleResolution": "nodenext"'
+  '';
+
   nativeBuildInputs = [
     typescript
   ];
