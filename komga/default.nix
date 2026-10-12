@@ -20,13 +20,13 @@ let
   jdk = jdk25_headless;
 
   pname = "komga";
-  version = "1.28.1";
+  version = "1.29.0";
 
   src = fetchFromGitHub {
     owner = "gotson";
     repo = pname;
     rev = version;
-    hash = "sha256-EXsuYrVc5pV8zM41wq5qgdqGs02R4a9oiKxoo66dAC4=";
+    hash = "sha256-yVIUQ8EQK6xEANeBehft3yn7YOBC9B0+A+oD+OVkSWc=";
     leaveDotGit = true;
     postFetch = ''
       set -euo pipefail
@@ -59,7 +59,7 @@ let
     npmDeps = fetchNpmDeps {
       inherit src;
       inherit (finalAttrs) sourceRoot;
-      hash = "sha256-Se6CxEVupbGzOirFJciFn4Rjkj9INMLj4IM2ae00mx8=";
+      hash = "sha256-UkwTaWM5Gv9hYaBSPZ4oHbyCI1PAGQFsFqrNtPScebA=";
     };
 
     nativeBuildInputs = [
@@ -88,7 +88,7 @@ let
     npmDeps = fetchNpmDeps {
       inherit src;
       inherit (finalAttrs) sourceRoot;
-      hash = "sha256-eMxgQWNCTvmWkWdO2MqAq8URrP5In+Q2RNoiLY6s0M8=";
+      hash = "sha256-sgQMz8R6DJRDMoaqlQjOs3RZdQLan1HU8hwgfTPTM4g=";
     };
 
     nativeBuildInputs = [
