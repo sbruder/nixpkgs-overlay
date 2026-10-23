@@ -85,6 +85,7 @@
             mdbook-svgbob
             netstick
             network-journal
+            opentelemetry-dotnet-instrumentation
             opentelemetry-javaagent
             pyplayready
             pywidevine

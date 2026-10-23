@@ -91,6 +91,8 @@ rec {
 
   network-journal = callPackage ./network-journal { };
 
+  opentelemetry-dotnet-instrumentation = callPackage ./opentelemetry-dotnet-instrumentation { };
+
   opentelemetry-javaagent = callPackage ./opentelemetry-javaagent { };
 
   pyplayready = callPythonPackage ./pyplayready { };
