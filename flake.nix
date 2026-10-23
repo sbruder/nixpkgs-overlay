@@ -85,6 +85,7 @@
             mdbook-svgbob
             netstick
             network-journal
+            opentelemetry-javaagent
             pyplayready
             pywidevine
             rlm_kanidm

@@ -91,6 +91,8 @@ rec {
 
   network-journal = callPackage ./network-journal { };
 
+  opentelemetry-javaagent = callPackage ./opentelemetry-javaagent { };
+
   pyplayready = callPythonPackage ./pyplayready { };
 
   rlm_kanidm = callPackage ./rlm_kanidm {
