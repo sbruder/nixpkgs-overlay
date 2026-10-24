@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
   version = "1.1.0";
 
   src = fetchFromGitHub {
-    owner = "weetmuts";
+    owner = "xaelsouth";
     repo = pname;
     rev = version;
     hash = "sha256-hqlvL0EhmxZ5NxyCxOB1a7S9mEnWrkUrrh7EPdXSN7k=";
@@ -33,7 +33,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "Software defined receiver for wireless M-Bus with RTL-SDR";
-    homepage = "https://github.com/weetmuts/rtl-wmbus";
+    homepage = "https://github.com/xaelsouth/rtl-wmbus";
     license = with licenses; [ bsd2 ];
     maintainers = with maintainers; [ sbruder ];
     platforms = platforms.unix;
