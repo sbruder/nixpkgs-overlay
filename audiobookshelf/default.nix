@@ -18,13 +18,13 @@ let
   nodejs = nodejs_24;
 
   pname = "audiobookshelf";
-  version = "2.37.1";
+  version = "2.37.2";
 
   src = fetchFromGitHub {
     owner = "advplyr";
     repo = pname;
     rev = "v${version}";
-    hash = "sha256-rTn64PrGPSKwDbsQmzvdSRa7UQEV1f2xXaYGtcVfrpk=";
+    hash = "sha256-GnXWG+8tb/clX6rpw4x1c5Usl28jKLEhuMFiAG+fCec=";
   };
 
   client = stdenv.mkDerivation (finalAttrs: {
@@ -36,7 +36,7 @@ let
     npmDeps = fetchNpmDeps {
       inherit src;
       inherit (finalAttrs) sourceRoot;
-      hash = "sha256-Rvy/bULWyVkGthfpIGkTMO8Lv1miywwea7jLODfm54Y=";
+      hash = "sha256-mQSppjp21z+xqLZekI/0qJ1gtLhX3L2CyC6e/l9COL4=";
     };
 
     nativeBuildInputs = [
@@ -73,7 +73,7 @@ buildNpmPackage {
     typescript
   ];
 
-  npmDepsHash = "sha256-xHjZ3E1DGeb5NueP67hEX3vHH0Qlk4LTeZkMEFBhGyE=";
+  npmDepsHash = "sha256-wF3PMYN+nymE6VktHtKcdLhSkeE4e04nGcRQJhYHG4c=";
 
   npmInstallFlags = [ "--only=production" ];
   npmBuildScript = "build:server";
