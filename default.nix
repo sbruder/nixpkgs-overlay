@@ -93,6 +93,8 @@ rec {
 
   opentelemetry-dotnet-instrumentation = callPackage ./opentelemetry-dotnet-instrumentation { };
 
+  opentelemetry-ebpf-instrumentation = callPackage ./opentelemetry-ebpf-instrumentation { };
+
   opentelemetry-javaagent = callPackage ./opentelemetry-javaagent { };
 
   pyplayready = callPythonPackage ./pyplayready { };

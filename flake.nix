@@ -86,6 +86,7 @@
             netstick
             network-journal
             opentelemetry-dotnet-instrumentation
+            opentelemetry-ebpf-instrumentation
             opentelemetry-javaagent
             pyplayready
             pywidevine
