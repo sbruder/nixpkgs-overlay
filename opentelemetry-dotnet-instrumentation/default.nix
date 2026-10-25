@@ -71,4 +71,13 @@ buildDotnetModule (finalAttrs: {
 
     runHook postInstall
   '';
+
+  meta = with lib; {
+    description = "OpenTelemetry .NET Automatic Instrumentation";
+    homepage = "https://opentelemetry.io/docs/zero-code/dotnet/";
+    license = licenses.asl20;
+    maintainers = with maintainers; [ sbruder ];
+    platforms = platforms.all;
+    sourceProvenance = with lib.sourceTypes; [ fromSource ];
+  };
 })
