@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
-{ lib, buildGoModule, fetchFromGitHub, llvmPackages, makeWrapper, bash, opentelemetry-javaagent }:
+{ lib, buildGoModule, fetchFromGitHub, llvmPackages, makeWrapper, bash }:
 let
   bpf2go = buildGoModule (finalAttrs: {
     pname = "bpf2go";
@@ -63,8 +63,6 @@ buildGoModule (finalAttrs: {
 
     mkdir .tools
     ln -s ${lib.getExe bpf2go} .tools/bpf2go
-
-    cp -f ${opentelemetry-javaagent.agentFile} pkg/internal/java/embedded/obi-java-agent.jar
   '';
 
   preBuild = ''
