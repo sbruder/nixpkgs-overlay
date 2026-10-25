@@ -91,6 +91,8 @@ rec {
 
   network-journal = callPackage ./network-journal { };
 
+  opentelemetry-auto-instrumentations-node = callPackage ./opentelemetry-auto-instrumentations-node { };
+
   opentelemetry-dotnet-instrumentation = callPackage ./opentelemetry-dotnet-instrumentation { };
 
   opentelemetry-ebpf-instrumentation = callPackage ./opentelemetry-ebpf-instrumentation { };

@@ -85,6 +85,7 @@
             mdbook-svgbob
             netstick
             network-journal
+            opentelemetry-auto-instrumentations-node
             opentelemetry-dotnet-instrumentation
             opentelemetry-ebpf-instrumentation
             opentelemetry-javaagent

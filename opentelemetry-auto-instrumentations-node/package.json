@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@opentelemetry/api": "^1.10.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.82.0"
+  }
+}
