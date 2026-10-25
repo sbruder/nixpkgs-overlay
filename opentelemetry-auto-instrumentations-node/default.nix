@@ -3,8 +3,7 @@
 # SPDX-License-Identifier: MIT OR Apache-2.0
 
 { lib, stdenv, importNpmLock, nodejs }:
-let
-in
+
 stdenv.mkDerivation (finalAttrs: {
   pname = "opentelemetry-auto-instrumentations-node";
   version = (builtins.fromJSON (builtins.readFile ./package-lock.json)).packages."node_modules/@opentelemetry/auto-instrumentations-node".version;
@@ -20,7 +19,11 @@ stdenv.mkDerivation (finalAttrs: {
 
   installPhase = ''
     runHook preInstall
-    cp -r $src $out
+
+    cp --no-preserve=mode -r $src/. $out
+    # drop file with references to archives from npm
+    rm -f $out/node_modules/.package-lock.json
+
     runHook postInstall
   '';
 
