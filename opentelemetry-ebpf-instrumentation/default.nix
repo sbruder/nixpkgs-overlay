@@ -70,6 +70,11 @@ buildGoModule (finalAttrs: {
     make generate/all
   '';
 
+  overrideModAttrs = _finalAttrs: _prevAttrs: {
+    # do not run preBuild when vendoring dependencies
+    preBuild = "";
+  };
+
   ldflags = [
     "-X go.opentelemetry.io/obi/pkg/buildinfo.Version=${finalAttrs.version}"
     "-X go.opentelemetry.io/obi/pkg/buildinfo.Revision=unset"
