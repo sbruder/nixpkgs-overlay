@@ -10,6 +10,7 @@
 , flac
 , gnuplot
 , id3v2
+, mp4v2
 , opustags
 , sox
 , vorbis-tools
@@ -22,6 +23,7 @@ let
     flac
     gnuplot
     id3v2
+    mp4v2
     opustags
     sox
     vorbis-tools
