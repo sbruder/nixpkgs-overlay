@@ -30,7 +30,16 @@ buildDotnetModule (finalAttrs: {
       --replace-fail 'message(FATAL_ERROR "GIT is required to build the project")' ""
   '';
 
-  # for project in build/_build.csproj src/OpenTelemetry.AutoInstrumentation*/*.csproj; do dotnet restore "$project" --packages out; done && nuget-to-json out > deps.json
+  projectFile = [
+    "build/_build.csproj"
+    "src/OpenTelemetry.AutoInstrumentation.AspNetCoreBootstrapper/OpenTelemetry.AutoInstrumentation.AspNetCoreBootstrapper.csproj"
+    "src/OpenTelemetry.AutoInstrumentation.Assemblies/OpenTelemetry.AutoInstrumentation.Assemblies.csproj"
+    "src/OpenTelemetry.AutoInstrumentation.BuildTasks/OpenTelemetry.AutoInstrumentation.BuildTasks.csproj"
+    "src/OpenTelemetry.AutoInstrumentation.Loader/OpenTelemetry.AutoInstrumentation.Loader.csproj"
+    "src/OpenTelemetry.AutoInstrumentation.PluginApi/OpenTelemetry.AutoInstrumentation.PluginApi.csproj"
+    "src/OpenTelemetry.AutoInstrumentation.StartupHook/OpenTelemetry.AutoInstrumentation.StartupHook.csproj"
+    "src/OpenTelemetry.AutoInstrumentation/OpenTelemetry.AutoInstrumentation.csproj"
+  ];
   nugetDeps = ./deps.json;
 
   dotnet-sdk = dotnetCorePackages.sdk_10_0;
@@ -41,7 +50,6 @@ buildDotnetModule (finalAttrs: {
     gcc
   ];
 
-  dontDotnetConfigure = true;
   dontDotnetInstall = true;
   dontUseCmakeConfigure = true;
 
