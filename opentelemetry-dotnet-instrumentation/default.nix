@@ -16,13 +16,13 @@
 
 buildDotnetModule (finalAttrs: {
   pname = "opentelemetry-dotnet-instrumentation";
-  version = "1.17.0";
+  version = "1.19.0";
 
   src = fetchFromGitHub {
     owner = "open-telemetry";
     repo = finalAttrs.pname;
     rev = "v${finalAttrs.version}";
-    hash = "sha256-hlsBcSXbAUiGXhTn2gBNTFbTT9a3uW/msWpDQiyemNA=";
+    hash = "sha256-T0KF7/9UjGvgG0irLL4ab9dES5WTbtrdNZj3sb0f9qo=";
   };
 
   # targets .NET Core 8, 9 and 10 (TFM) and needs the dependencies in the exact version they ship with
