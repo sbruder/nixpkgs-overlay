@@ -25,6 +25,13 @@ buildDotnetModule (finalAttrs: {
     hash = "sha256-hlsBcSXbAUiGXhTn2gBNTFbTT9a3uW/msWpDQiyemNA=";
   };
 
+  # targets .NET Core 8, 9 and 10 (TFM) and needs the dependencies in the exact version they ship with
+  buildInputs = lib.concatMap (tfm: tfm.packages) (with dotnetCorePackages; [
+    sdk_8_0
+    sdk_9_0
+    # sdk_10_0 implicit via dotnet-sdk
+  ]);
+
   postPatch = ''
     substituteInPlace src/OpenTelemetry.AutoInstrumentation.Native/CMakeLists.txt \
       --replace-fail 'message(FATAL_ERROR "GIT is required to build the project")' ""
