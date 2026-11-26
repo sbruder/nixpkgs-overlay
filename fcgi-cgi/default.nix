@@ -24,5 +24,6 @@ stdenv.mkDerivation (finalAttrs: {
     license = licenses.mit;
     maintainers = with maintainers; [ sbruder ];
     platforms = platforms.linux;
+    mainProgram = finalAttrs.pname;
   };
 })
