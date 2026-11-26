@@ -66,6 +66,7 @@
             cups-sii-slp-400-600
             dgpulldown
             face_morpher
+            fcgi-cgi
             fedifetcher
             feishin-web
             gandhi-fonts

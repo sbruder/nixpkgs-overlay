@@ -51,6 +51,8 @@ rec {
 
   face_morpher = callPythonPackage ./face_morpher { };
 
+  fcgi-cgi = callPackage ./fcgi-cgi { };
+
   fedifetcher = callPythonPackage ./fedifetcher { };
 
   feishin-web = callPackage ./feishin-web { };
